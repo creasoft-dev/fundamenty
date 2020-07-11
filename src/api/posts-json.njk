@@ -1,0 +1,17 @@
+---
+permalink: /api/posts.json
+---
+[
+  {# {% for post in collections['posts_' + lang] %} #}
+  {% for post in collections.post %}
+    {
+      "title": "{{ post.data.title }}",
+      "lang": "{{ post.data.locale }}",
+      "tags": "{{ post.data.tags }}",
+      "url": "{{ post.url }}",
+      "keywords": "{{ post.data.keywords }}",
+      "objectID": "{{ post.url }}",
+      "content": "{{ post.templateContent  | algExcerpt | jsonify }}"
+    }{{ '' if loop.last else ',' }}
+  {% endfor  %}
+]

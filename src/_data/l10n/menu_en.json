@@ -1,0 +1,28 @@
+{
+    "top": [{
+            "title": "About",
+            "href": "/en/pages/about"
+        },
+        {
+            "title": "Articles",
+            "href": "/en/pages/articles"
+        },
+        {
+            "icon": "fa-git",
+            "href": "https://gitlab.com/creasoft-dev/projects/fundamenty"
+        },
+        {
+            "icon": "fa-twitter",
+            "href": "https://twitter.com/creasoftdev"
+        }
+    ],
+    "side": [{
+            "title": "CreaSoft",
+            "href": "https://creasoft.dev"
+        },
+        {
+            "title": "Empoderemos Mas",
+            "href": "https://empoderemosmas.com"
+        }
+    ]
+}

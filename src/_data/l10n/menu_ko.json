@@ -1,0 +1,28 @@
+{
+    "top": [{
+            "title": "소개",
+            "href": "/ko/pages/acerca"
+        },
+        {
+            "title": "기사",
+            "href": "/ko/pages/articulos"
+        },
+        {
+            "icon": "fa-git",
+            "href": "https://gitlab.com/creasoft-dev/projects/fundamenty"
+        },
+        {
+            "icon": "fa-twitter",
+            "href": "https://twitter.com/creasoftdev"
+        }
+    ],
+    "side": [{
+            "title": "CreaSoft",
+            "href": "https://creasoft.dev"
+        },
+        {
+            "title": "Empoderemos Mas",
+            "href": "https://empoderemosmas.com"
+        }
+    ]
+}

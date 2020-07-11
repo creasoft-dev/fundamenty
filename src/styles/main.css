@@ -1,0 +1,60 @@
+@tailwind base;
+
+/**
+ * Referenced from: https://github.com/iandinwoodie/github-markdown-tailwindcss/blob/master/markdown.css
+ */
+
+h1 {
+    @apply leading-relaxed text-4xl text-teal-800 font-bold;
+}
+
+h2 {
+    @apply leading-relaxed text-3xl text-teal-600;
+}
+
+h3 {
+    @apply leading-relaxed text-2xl text-teal-600;
+}
+
+h3 {
+    @apply leading-relaxed text-lg text-teal-600;
+}
+
+p {
+    @apply leading-relaxed my-3
+}
+
+ul {
+    @apply text-base pl-8 list-disc;
+}
+
+ol {
+    @apply text-base pl-8 list-decimal;
+}
+
+table {
+    @apply text-base border-gray-600;
+}
+
+th {
+    @apply border py-1 px-3;
+}
+
+td {
+    @apply border py-1 px-3;
+}
+
+blockquote {
+    @apply border m-1 p-2 bg-gray-200;
+}
+
+a {
+    @apply underline;
+}
+
+a:hover {
+    @apply underline text-blue-500;
+}
+
+@tailwind components;
+@tailwind utilities;

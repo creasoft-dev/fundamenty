@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="{{ locale }}">
+  <head profile="http://www.w3.org/2005/10/profile">
+{% if site.googleTagId %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleTagId }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', '{{ site.googleTagId }}');
+    </script>
+{% endif %}
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+    <link rel="icon" type="image/png" href="{{ site.faviconUrl }}">
+    <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav id="header" class="fixed w-full z-10 top-0 bg-gray-100 border-b border-gray-400 shadow-md">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4  ">
+        <div class="pl-4 flex items-center">
+          <image src="{{ site.logoUrl }}" class="h-5 mr-1"/>
+          <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl"  href="/">
+            {{ site.name }}
+          </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+          <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-purple-500 appearance-none focus:outline-none">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="w-full flex-grow lg:flex  lg:content-center lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
+          <div class="flex-1 w-full mx-auto max-w-sm content-center py-4 lg:py-0">
+            <div class="relative pull-right pl-4 pr-4 md:pr-0">
+              <input id="searchbox" type="search" placeholder="{{ site[locale]._t.search }}" class="w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-purple-500 rounded py-1 px-2 pl-10 appearance-none leading-normal">
+              <div class="absolute search-icon" style="top: 0.375rem;left: 1.75rem;">
+                <img src="/images/algolia-blue-mark.png" class="h-5"/>
+              </div>
+            </div>
+          </div>
+          <ul class="list-reset lg:flex justify-end items-center list-none">
+            {% for menuItem in site[locale].menu.top %}
+              <li class="mr-3 py-2 lg:py-0">
+                <a href="{{menuItem.href}}" class="inline-block py-2 px-2 text-gray-900 font-bold no-underline hover:text-indigo-600">
+                  <i class="fab {{menuItem.icon}} fill-current "></i>{{menuItem.title}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+
+          <ul class="list-reset lg:flex justify-end items-center list-none">
+            {% for lang in site.langs %}
+              <li class="bg-red mr-3 py-2 lg:py-0">
+                <a href="/{{lang.id}}" class="inline-block text-xs text-gray-600 no-underline">{{lang.name}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-16">
+      <div class="content w-full">
+        {{ content | safe }}
+        <div></div>
+        <script src="/assets/main.js"></script>
+
+        <script>
+
+          /* Toggle dropdown list */
+          /* https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8 */
+
+          var navMenuDiv = document.getElementById("nav-content");
+          var navMenu = document.getElementById("nav-toggle");
+
+          var helpMenuDiv = document.getElementById("menu-content");
+          var helpMenu = document.getElementById("menu-toggle");
+
+          document.onclick = check;
+
+          function check(e) {
+            var target = (e && e.target) || (event && event.srcElement);
+
+            //Nav Menu
+            if (!checkParent(target, navMenuDiv)) {
+              // click NOT on the menu
+              if (checkParent(target, navMenu)) {
+                // click on the link
+                if (navMenuDiv.classList.contains("hidden")) {
+                  navMenuDiv
+                    .classList
+                    .remove("hidden");
+                } else {
+                  navMenuDiv
+                    .classList
+                    .add("hidden");
+                }
+              } else {
+                // click both outside link and outside menu, hide menu
+                navMenuDiv
+                  .classList
+                  .add("hidden");
+              }
+            }
+
+            //Help Menu
+            if (!checkParent(target, helpMenuDiv)) {
+              // click NOT on the menu
+              if (checkParent(target, helpMenu)) {
+                // click on the link
+                if (helpMenuDiv.classList.contains("hidden")) {
+                  helpMenuDiv
+                    .classList
+                    .remove("hidden");
+                } else {
+                  helpMenuDiv
+                    .classList
+                    .add("hidden");
+                }
+              } else {
+                // click both outside link and outside menu, hide menu
+                helpMenuDiv
+                  .classList
+                  .add("hidden");
+              }
+            }
+
+          }
+
+          function checkParent(t, elm) {
+            while (t.parentNode) {
+              if (t == elm) {
+                return true;
+              }
+              t = t.parentNode;
+            }
+            return false;
+          }
+        </script>
+      </body>
+    </html>
