@@ -16,7 +16,7 @@ layout: layouts/base.njk
 {% for post in posts %}
   <article>
     <h3>
-      <a href="{{ site.rootPath }}{{ post.url | url }}">{{ post.data.title }}</a>
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
     </h3>
     {{ post.date | formatDate("LL", locale) }}
   </article>

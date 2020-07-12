@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; URL='{{ destination }}'" />
-  <title>Redirecting to: {{ destination }}</title>
+  <meta http-equiv="refresh" content="0; URL='{{ destination | url }}'" />
+  <title>Redirecting to: {{ destination | url }}</title>
 </head>
 <body>
-  <!-- Redirect page -->
+  <!-- Redirecting to  page {{ destination | url }} -->
 </body>
 </html>

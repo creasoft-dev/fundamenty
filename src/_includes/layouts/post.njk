@@ -6,7 +6,7 @@ layout: layouts/base.njk
 
 {% if videoUrl %}
 <div class="flex justify-center">
-    <iframe src="{{ videoUrl }} " 
+    <iframe src="{{ videoUrl | url }} " 
     width="560" height="315" frameborder="0" 
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen ></iframe>
@@ -16,7 +16,7 @@ layout: layouts/base.njk
 {% if imageUrl %}
 <div class="w-auto">
         <div class="h-64" style="background-image:
-            url('{{ imageUrl }}'); 
+            url('{{ imageUrl | url }}'); 
         width:100%;
         background-repeat: no-repeat;
         background-position:center;">&nbsp;</div>

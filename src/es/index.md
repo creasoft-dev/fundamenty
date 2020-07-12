@@ -14,7 +14,7 @@ keywords: ["eleventy", "ssg", "sitios web", "plantilla"]
 
 <div 
     style="background-image:
-           url('/images/background.jpg'); 
+           url('{{ "/images/background.jpg"  | url}}'); 
     height:200px;
     background-size: 100%; 
     background-position:center;">&nbsp;</div>

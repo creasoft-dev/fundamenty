@@ -41,8 +41,8 @@ const site = {
 
 };
 
-if (process.env.WEB_ROOT_PATH) {
-    site.rootPath = process.env.WEB_ROOT_PATH;
+if (process.env.WEB_PATH_PREFIX) {
+    site.pathPrefix = process.env.WEB_PATH_PREFIX;
 }
 
 if (process.env.ELEVENTY_ENV === 'production' && process.env.GOOGLE_TAG_ID) {

@@ -14,6 +14,10 @@ module.exports = eleventyConfig => {
     eleventyConfig.addPassthroughCopy('src/js');
     eleventyConfig.addPassthroughCopy('src/images');
 
+    // Prefixes the url with the site's root path
+    eleventyConfig.addFilter("siteUrl", function(url) {
+        return (url.startsWith('http')) ? url : site.rootPath + url;
+    });
 
     // date filter (localized)
     eleventyConfig.addFilter("formatDate", function(date, format, locale) {
@@ -53,6 +57,7 @@ module.exports = eleventyConfig => {
 
 
     return {
+        pathPrefix: process.env.WEB_PATH_PREFIX || '',
         dir: { input: 'src', output: '_site' }
     };
 
