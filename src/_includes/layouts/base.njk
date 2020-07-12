@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="{{ locale }}">
   <head profile="http://www.w3.org/2005/10/profile">
-{% if site.googleTagId %}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleTagId }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+    {% if site.googleTagId %}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleTagId }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-      gtag('config', '{{ site.googleTagId }}');
-    </script>
-{% endif %}
+        gtag('config', '{{ site.googleTagId }}');
+      </script>
+    {% endif %}
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}">
     <meta name="keywords" content="{{ keywords }}">
@@ -72,80 +72,90 @@
     <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-16">
       <div class="content w-full">
         {{ content | safe }}
-        <div></div>
-        <script src="{{ '/assets/main.js' | url }}"></script>
+      </div>
+    </div>
 
-        <script>
+    <footer class="w-full bg-gray-100 mt-6 p-2 border-t-1 border-gray-300">
+      <div <div class="w-full container mx-auto flex flex-wrap items-center justify-center ">
+        <div >
+          <a href="https://gitlab.com/creasoft-dev/projects/fundamenty">Fundamenty</a>, powered by <a href="https://www.11ty.dev/" >Eleventy</a>
+        </div>
+      </div>
+    </footer>
 
-          /* Toggle dropdown list */
-          /* https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8 */
+    <script src="{{ '/assets/main.js' | url }}"></script>
 
-          var navMenuDiv = document.getElementById("nav-content");
-          var navMenu = document.getElementById("nav-toggle");
+    <script>
 
-          var helpMenuDiv = document.getElementById("menu-content");
-          var helpMenu = document.getElementById("menu-toggle");
+      /* Toggle dropdown list */
+      /* https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8 */
 
-          document.onclick = check;
+      var navMenuDiv = document.getElementById("nav-content");
+      var navMenu = document.getElementById("nav-toggle");
 
-          function check(e) {
-            var target = (e && e.target) || (event && event.srcElement);
+      var helpMenuDiv = document.getElementById("menu-content");
+      var helpMenu = document.getElementById("menu-toggle");
 
-            //Nav Menu
-            if (!checkParent(target, navMenuDiv)) {
-              // click NOT on the menu
-              if (checkParent(target, navMenu)) {
-                // click on the link
-                if (navMenuDiv.classList.contains("hidden")) {
-                  navMenuDiv
-                    .classList
-                    .remove("hidden");
-                } else {
-                  navMenuDiv
-                    .classList
-                    .add("hidden");
-                }
-              } else {
-                // click both outside link and outside menu, hide menu
-                navMenuDiv
-                  .classList
-                  .add("hidden");
-              }
+      document.onclick = check;
+
+      function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, navMenu)) {
+            // click on the link
+            if (navMenuDiv.classList.contains("hidden")) {
+              navMenuDiv
+                .classList
+                .remove("hidden");
+            } else {
+              navMenuDiv
+                .classList
+                .add("hidden");
             }
-
-            //Help Menu
-            if (!checkParent(target, helpMenuDiv)) {
-              // click NOT on the menu
-              if (checkParent(target, helpMenu)) {
-                // click on the link
-                if (helpMenuDiv.classList.contains("hidden")) {
-                  helpMenuDiv
-                    .classList
-                    .remove("hidden");
-                } else {
-                  helpMenuDiv
-                    .classList
-                    .add("hidden");
-                }
-              } else {
-                // click both outside link and outside menu, hide menu
-                helpMenuDiv
-                  .classList
-                  .add("hidden");
-              }
-            }
-
+          } else {
+            // click both outside link and outside menu, hide menu
+            navMenuDiv
+              .classList
+              .add("hidden");
           }
+        }
 
-          function checkParent(t, elm) {
-            while (t.parentNode) {
-              if (t == elm) {
-                return true;
-              }
-              t = t.parentNode;
+        //Help Menu
+        if (!checkParent(target, helpMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, helpMenu)) {
+            // click on the link
+            if (helpMenuDiv.classList.contains("hidden")) {
+              helpMenuDiv
+                .classList
+                .remove("hidden");
+            } else {
+              helpMenuDiv
+                .classList
+                .add("hidden");
             }
-            return false;
+          } else {
+            // click both outside link and outside menu, hide menu
+            helpMenuDiv
+              .classList
+              .add("hidden");
           }
-        </script>
-      </body>
-    </html>
+        }
+
+      }
+
+      function checkParent(t, elm) {
+        while (t.parentNode) {
+          if (t == elm) {
+            return true;
+          }
+          t = t.parentNode;
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>
