@@ -4,6 +4,10 @@ Fundamenty
 Eleventy starter repository showing how to build a multilingual website with the 
 Eleventy static site generator.
 
+See live on 
+- [Netlify](https://fundamenty.netlify.app/) - [![Netlify Status](https://api.netlify.com/api/v1/badges/78a62ba4-e24e-45ca-ae9a-62306bf9bed8/deploy-status)](https://app.netlify.com/sites/fundamenty/deploys)
+- [GitLab Pages](https://creasoft-dev.gitlab.io/projects/fundamenty/en/)
+
 Features included in this starter
 - Multi-language support
 - Integration with Algolia (autocomplete search box)
@@ -40,9 +44,12 @@ If you are using `npm` you can replace `yarn build` with `npm run build`, etc.
 This project includes `.gitlab-ci.yml` that deploys the site on Gitlab pages. But you can deploy
 on any other SSG hosting such as GitHub pages, Netlify, [surge.sh](https://surge.sh/)
 
-Regardless of where you deploy, you will can provide the following environment variables. 
-All of them are optional, if not provided, the feature will just be disabled.
+You may provide the following environment variables for the deployment.
 
+The `WEB_PATH_PREFIX` variable is for the prefix path, which is required if your site lives in a different subdirectory. Needed for GitLab/GitHub Pages. 
+The rest of the variables are optional. If not provided, the feature will just be disabled.
+
+- `WEB_PATH_PREFIX`        - The URL context path. Needed when site lives in non-root path.
 - `GOOGLE_TAG_ID`          - Google Analytics tag ID (it starts with `UA-`)
 - `ALGOLIA_APP_ID`         - Algolia's APP ID 
 - `ALGOLIA_INDEX_NAME`     - Algolia's Index name
@@ -51,25 +58,43 @@ All of them are optional, if not provided, the feature will just be disabled.
 
 
 ## Customizing the Site and Working with Content
-Now that you have installed and served the starter project, you can configure the site branding in `./src/_data/site.js`
+Now that you have installed and served the starter project, you can configure the site branding in `./src/_data/site.js`.
+Then create site pages under `./src/{lang}/pages`, and articles/posts under `./src/{lang}/posts`.
+Those two location includes [directory data files](https://www.11ty.dev/docs/data-template-dir/) with contextual data fields `locale` and `tags`.
+
+The top menu can be customized by modifying the file in `./src/_data/l10n/menu_{lang}.json`.
+
+When you have links to local asset use the `url` filter, e.g. `{{ yourUrl | url }}`
+
+### Localization
+The directory with the name of locales under `./src`, e.g. `en` and `es` defines the locale of the 
+content under that directory. This is done through  the  directory data file.
+
+The localization of the navigation and translation were externalized in `./src/_data/l10n` directory.
+
+The list of active locales are defined in `./src/_data/site.js` data file.
+Based on the list of languages, the eleventy configuration file - `/.elevevnty.js` generates 
+post collections per each locale, which can be accessed by the name:
+`collections.posts_{locale}`.
+
 
 ### Site Content Directory Structure
 The site content is under `./src`.
 ```
-├───<lang>      - Contents in given locale 
-│   ├ es.json   - Common front matter for all the contents in Spanish 
-│   ├───pages   - Site pages
-│   └───posts   - Site posts (e.g. blog articles)
-├───images      - Images
-├───scripts     - 
-│   ├ main.js   - Main JS file webapack uses to build the asset bundle.
-│   └ algolia.js- Site posts (blog articles)
-├───styles      - Tailwind's CSS styling
-├───_data       - Data/configuration file.
-│   ├ site.js   - Main site configuration data.
-│   ├───l10n    - localization resource bundles
-└───_includes   - Eleventy's inclusion files, as specified in the front matter 
-    └───layouts - Layouts
+├───{lang}       - Contents in given locale 
+│   ├ {lang}.json    - Common front matter for all the contents in Spanish 
+│   ├───pages    - Site pages
+│   └───posts    - Site posts (e.g. blog articles)
+├───images       - Images
+├───scripts      - 
+│   ├ main.js    - Main JS file webapack uses to build the asset bundle.
+│   └ algolia.js - Site posts (blog articles)
+├───styles       - Tailwind's CSS styling
+├───_data        - Data/configuration file.
+│   ├ site.js    - Main site configuration data.
+│   ├───l10n     - localization resource bundles
+└───_includes    - Eleventy's inclusion files, as specified in the front matter 
+    └───layouts  - Layouts
 ```
 
 ## Future Enhancements
