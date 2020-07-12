@@ -11,7 +11,7 @@ const menu_es = require("./l10n/menu_es.json");
  */
 const site = {
     buildTime: new Date(),
-    rootPath: "",
+    repoUrl: "https://gitlab.com/creasoft-dev/projects/fundamenty",
 
     // Branding
     name: "Fundamenty",

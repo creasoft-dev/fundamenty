@@ -84,10 +84,15 @@ yarn add --dev webpack webpack-cli npm-run-all rimraf
 yarn add --dev tailwindcss autoprefixer mini-css-extract-plugin css-loader postcss-loader
 ```
 
+## Next Steps
+Fore more advanced Eleventy, read the [it documentation](https://www.11ty.dev/docs/).
+
+Especially the [documentation on page data](https://www.11ty.dev/docs/data-eleventy-supplied/) is useful.
+
 
 ## Sites Built with Fundamenty
 - [creasoft.dev](https://creasoft.dev)
-- [empoderemosmas.com](https://empoderemosmas.dev)
+- [empoderemosmas.com](https://empoderemosmas.com)
 
 
 ## Credits

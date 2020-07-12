@@ -32,3 +32,6 @@ layout: layouts/base.njk
 
 <hr />
 <p class="content-center">{{ site[locale]._t.published_on }}: {{ date  | formatDate("LL", locale) }}, {{ site[locale]._t.by }}  {{ author }}</p>
+{% if site.repoUrl %}
+<a href="{{ site.repoUrl }}/edit/master/{{page.inputPath}}">{{ site[locale]._t.edit_on_git }}</a>
+{% endif %}
