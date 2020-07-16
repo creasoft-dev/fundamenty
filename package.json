@@ -7,12 +7,14 @@
         "website",
         "ssg"
     ],
+    "version": "0.0.1",
     "author": "Young-Suk Ahn Park<ys.ahnpark@gmail.com>",
     "license": "MIT",
     "repository": "git@gitlab.com:creasoft-dev/projects/fundamenty.git",
     "devDependencies": {
         "@11ty/eleventy": "^0.11.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+        "algoliasearch": "^4.3.0",
         "autocomplete.js": "^0.37.1",
         "autoprefixer": "^9.8.4",
         "css-loader": "^3.6.0",
@@ -31,12 +33,11 @@
         "serve:eleventy": "eleventy --serve",
         "serve": "npm-run-all clean --parallel serve:*",
         "build:webpack": "webpack --mode production",
-        "build:eleventy": " eleventy",
+        "build:eleventy": "eleventy",
         "build": "run-s clean build:*",
-        "algolia:push": "node ./scripts/algolia-push.js"
+        "algolia:push": "node ./pipeline/algolia-push.js"
     },
     "dependencies": {
-        "algoliasearch": "^4.3.0",
         "dotenv": "^8.2.0"
     }
 }

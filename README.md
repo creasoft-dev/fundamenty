@@ -56,6 +56,7 @@ The rest of the variables are optional. If not provided, the feature will just b
 - `ALGOLIA_SEARCH_API_KEY` - Algolia's Search only API Key
 - `ALGOLIA_ADMIN_API_kEY`  - Algolia's Admin API Key (for pushing posts to Algolia index)
 
+For creating accounts in Google Analytics and Algolia, see the [3RD_PARTY_SERVICES.md](3RD_PARTY_SERVICES.md)
 
 ## Customizing the Site and Working with Content
 Now that you have installed and served the starter project, you can configure the site branding in `./src/_data/site.js`.
@@ -124,4 +125,4 @@ Especially the [documentation on page data](https://www.11ty.dev/docs/data-eleve
 - Initial project setup [Eleventy+Webpack](https://statickit.com/guides/eleventy-webpack) and [Eleventy+Tailwind](https://statickit.com/guides/eleventy-tailwind) from statickit.com.
 - Theme based on [Tailwind Help-Article](https://github.com/tailwindtoolbox/Help-Article) from tailwindtoolbox
 - Multilingual based on [this article](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by Jérôme Coupé.
-- Integrataion with Algolia based on [this article](https://www.raymondcamden.com/2020/06/24/adding-algolia-search-to-eleventy-and-netlify) and [this other](https://www.raymondcamden.com/2020/07/01/adding-algolia-search-to-eleventy-and-netlify-part-two)
+- Integration with Algolia based on [this article](https://www.raymondcamden.com/2020/06/24/adding-algolia-search-to-eleventy-and-netlify) and [this other](https://www.raymondcamden.com/2020/07/01/adding-algolia-search-to-eleventy-and-netlify-part-two)

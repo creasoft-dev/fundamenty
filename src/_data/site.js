@@ -17,7 +17,7 @@ const site = {
     name: "Fundamenty",
     logoUrl: "/images/logo.png",
     faviconUrl: "/images/logo.ico",
-    googleTagId: "",
+    googleTagId: "", // use environment variable, see bottom of this file
 
     // Active languages
     langs: [{
