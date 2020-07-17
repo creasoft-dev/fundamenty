@@ -50,8 +50,8 @@ You may provide the following environment variables for the deployment.
 The `WEB_PATH_PREFIX` variable is for the prefix path, which is required if your site lives in a different subdirectory. Needed for GitLab/GitHub Pages. 
 The rest of the variables are optional. If not provided, the feature will just be disabled.
 
-- `WEB_PATH_PREFIX`        - The URL context path. Needed when site lives in non-root path.
 - `WEB_ROOT_URL`           - Website's root URL, used to generate site.xml
+- `WEB_PATH_PREFIX`        - The URL context path. Needed when site lives in non-root path.
 - `GOOGLE_TAG_ID`          - Google Analytics tag ID (it starts with `UA-`)
 - `ALGOLIA_APP_ID`         - Algolia's APP ID 
 - `ALGOLIA_INDEX_NAME`     - Algolia's Index name
