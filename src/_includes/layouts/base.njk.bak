@@ -26,7 +26,7 @@
     <nav id="header" class="fixed w-full z-10 top-0 bg-gray-100 border-b border-gray-400 shadow-md">
       <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4  ">
         <div class="pl-4 flex items-center">
-          <image src="{{ site.logoUrl | url }}" alt="Logo" class="h-5 mr-1"/>
+          <image src="{{ site.logoUrl | url }}" class="h-5 mr-1"/>
           <a  href="{{ '/' | url }} " class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" >
             {{ site.name }}
           </a>

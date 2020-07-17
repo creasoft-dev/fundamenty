@@ -3,5 +3,6 @@
     "articles": "Articles",
     "published_on": "Published on",
     "by": "by",
-    "edit_on_git": "Edit on Git"
+    "edit_on_git": "Edit on Git",
+    "NOT_FOUND": "Oops! I am really sorry to inform that the page you are looking for does not exist."
 }

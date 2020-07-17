@@ -12,6 +12,7 @@ const menu_es = require("./l10n/menu_es.json");
 const site = {
     buildTime: new Date(),
     repoUrl: "https://gitlab.com/creasoft-dev/projects/fundamenty",
+    rootUrl: "https://fundamenty.netlify.app/",
 
     // Branding
     name: "Fundamenty",
@@ -40,6 +41,10 @@ const site = {
     },
 
 };
+
+if (process.env.WEB_ROOT_URL) {
+    site.rootUrl = process.env.WEB_ROOT_URL;
+}
 
 if (process.env.WEB_PATH_PREFIX) {
     site.pathPrefix = process.env.WEB_PATH_PREFIX;
