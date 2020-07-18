@@ -35,7 +35,7 @@
         "build:webpack": "webpack --mode production",
         "build:eleventy": "eleventy",
         "build": "run-s clean build:*",
-        "algolia:push": "node ./pipeline/algolia-push.js"
+        "algolia:tool": "node ./tools/algolia-tool.js"
     },
     "dependencies": {
         "dotenv": "^8.2.0"

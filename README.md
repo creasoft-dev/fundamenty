@@ -12,8 +12,9 @@ Features included in this starter
 - Multi-language support
 - Integration with Algolia (autocomplete search box)
 - Google Analytics
-- Edit at GitLab
+- Edit on GitLab
 - Generation of `robots.txt` and `sitemap.xml`
+- CI script to deploy on GitLab Pages
 
 The project uses
 - [TailwindCSS](https://tailwindcss.com/)

@@ -12,7 +12,7 @@ const menu_es = require("./l10n/menu_es.json");
 const site = {
     buildTime: new Date(),
     repoUrl: "https://gitlab.com/creasoft-dev/projects/fundamenty",
-    rootUrl: "https://fundamenty.netlify.app/",
+    rootUrl: "https://fundamenty.netlify.app",
 
     // Branding
     name: "Fundamenty",
@@ -53,5 +53,10 @@ if (process.env.WEB_PATH_PREFIX) {
 if (process.env.ELEVENTY_ENV === 'production' && process.env.GOOGLE_TAG_ID) {
     site.googleTagId = process.env.GOOGLE_TAG_ID;
 }
+
+if (process.env.ALGOLIA_APP_ID) {
+    site.enableAlgolia = true;
+}
+
 
 module.exports = site;
