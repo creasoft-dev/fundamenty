@@ -22,15 +22,16 @@ The world is waiting for you to share your knowledge!
 
 ## Fundamenty, the fundamental Eleventy starter project
 
-Just clone the [repo](https://gitlab.com/creasoft-dev/projects/fundamenty), and `yarn build && yarn serve:eleventy`
+Just clone the [repo](https://github.com/creasoft-dev/fundamenty), and `yarn build && yarn serve:eleventy`
 
 ### The project includes following features:
 - Multi-language support
-- Integration with Algolia (autocomplete search box)
-- Google Analytics
-- Edit on GitLab/GitHub
+- Syntax highlighting with [Prism](https://prismjs.com/)
+- Integration with [Algolia](https://www.algolia.com/) (autocomplete search box)
+- [Google Analytics](https://analytics.google.com/)
+- Edit on GitLab / GitHub
 - Generation of `robots.txt` and `sitemap.xml`
-- GitHub Workflow Actions script to deploy on GitHub Pages
+- [GitHub Actions](https://docs.github.com/en/actions) script to deploy on GitHub Pages
 - GitLab-CI script to deploy on GitLab Pages
 
 ### The project uses

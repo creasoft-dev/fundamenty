@@ -6,16 +6,18 @@ Eleventy static site generator.
 
 See live on 
 - [Netlify](https://fundamenty.netlify.app/) - [![Netlify Status](https://api.netlify.com/api/v1/badges/78a62ba4-e24e-45ca-ae9a-62306bf9bed8/deploy-status)](https://app.netlify.com/sites/fundamenty/deploys)
-- [GitLab Pages](https://creasoft-dev.gitlab.io/projects/fundamenty/en/)
+- [GitHub Pages](https://creasoft-dev.github.io/fundamenty/)
+- [GitLab Pages](https://creasoft-dev.gitlab.io/projects/fundamenty/)
 
 Features included in this starter
 - Multi-language support
-- Integration with Algolia (autocomplete search box)
-- Google Analytics
+- Syntax highlighting with [Prism](https://prismjs.com/)
+- Integration with [Algolia](https://www.algolia.com/) (autocomplete search box)
+- [Google Analytics](https://analytics.google.com/)
 - Edit on GitLab / GitHub
 - Generation of `robots.txt` and `sitemap.xml`
-- GitHub Workflow Actions script to deploy on GitHub Pages
-- GitLab-CI script to deploy on GitLab Pages
+- [GitHub Actions](https://docs.github.com/en/actions) script to deploy on GitHub Pages
+- [GitLab-CI](https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/) script to deploy on GitLab Pages
 
 The project uses
 - [TailwindCSS](https://tailwindcss.com/)
@@ -78,9 +80,9 @@ content under that directory. This is done through  the  directory data file.
 The localization of the navigation and translation were externalized in `./src/_data/l10n` directory.
 
 The list of active locales are defined in `./src/_data/site.js` data file.
-Based on the list of languages, the eleventy configuration file - `/.elevevnty.js` generates 
+Based on the list of languages, the eleventy configuration file - `/.eleventy.js` generates 
 post collections per each locale, which can be accessed by the name:
-`collections.posts_{locale}`.
+`collections.posts_{lang}`.
 
 
 ### Site Content Directory Structure
@@ -115,7 +117,7 @@ yarn add --dev tailwindcss autoprefixer mini-css-extract-plugin css-loader postc
 ```
 
 ## Next Steps
-Fore more advanced Eleventy, read the [it documentation](https://www.11ty.dev/docs/).
+Fore more advanced Eleventy, read the [its documentation](https://www.11ty.dev/docs/).
 
 Especially the [documentation on page data](https://www.11ty.dev/docs/data-eleventy-supplied/) is useful.
 

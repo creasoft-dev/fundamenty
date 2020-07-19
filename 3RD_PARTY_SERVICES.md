@@ -70,5 +70,6 @@ ALGOLIA_SEARCH_API_KEY=
 ALGOLIA_ADMIN_API_kEY=
 ```
 And save the `.env` file. This will enable search in the local run.
+We don't want to check the `.env` file, it is already included in `.gitignore`. 
 
 Go to GitLab CI/CD and create variables for all the values obtained above
