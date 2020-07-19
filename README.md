@@ -12,9 +12,10 @@ Features included in this starter
 - Multi-language support
 - Integration with Algolia (autocomplete search box)
 - Google Analytics
-- Edit on GitLab
+- Edit on GitLab / GitHub
 - Generation of `robots.txt` and `sitemap.xml`
-- CI script to deploy on GitLab Pages
+- GitHub Workflow Actions script to deploy on GitHub Pages
+- GitLab-CI script to deploy on GitLab Pages
 
 The project uses
 - [TailwindCSS](https://tailwindcss.com/)
@@ -129,3 +130,4 @@ Especially the [documentation on page data](https://www.11ty.dev/docs/data-eleve
 - Theme based on [Tailwind Help-Article](https://github.com/tailwindtoolbox/Help-Article) from tailwindtoolbox
 - Multilingual based on [this article](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by Jérôme Coupé.
 - Integration with Algolia based on [this article](https://www.raymondcamden.com/2020/06/24/adding-algolia-search-to-eleventy-and-netlify) and [this other](https://www.raymondcamden.com/2020/07/01/adding-algolia-search-to-eleventy-and-netlify-part-two)
+- [GitHub Actions for GitHub Pages](https://github.com/marketplace/actions/github-pages-action)

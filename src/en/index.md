@@ -28,9 +28,10 @@ Just clone the [repo](https://gitlab.com/creasoft-dev/projects/fundamenty), and 
 - Multi-language support
 - Integration with Algolia (autocomplete search box)
 - Google Analytics
-- Edit on GitLab
+- Edit on GitLab/GitHub
 - Generation of `robots.txt` and `sitemap.xml`
-- CI script to deploy on GitLab Pages
+- GitHub Workflow Actions script to deploy on GitHub Pages
+- GitLab-CI script to deploy on GitLab Pages
 
 ### The project uses
 - [TailwindCSS](https://tailwindcss.com/)

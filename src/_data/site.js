@@ -58,5 +58,9 @@ if (process.env.ALGOLIA_APP_ID) {
     site.enableAlgolia = true;
 }
 
+if (process.env.REPO_URL) {
+    site.repoUrl = process.env.REPO_URL;
+}
+
 
 module.exports = site;
