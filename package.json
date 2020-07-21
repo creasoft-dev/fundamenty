@@ -1,7 +1,7 @@
 {
     "name": "Fundamenty",
     "description": "Eleventy starter project with multi-language support",
-    "homepage": "https://gitlab.com/creasoft-dev/projects/fundamenty",
+    "homepage": "https://github.com/creasoft-dev/fundamenty",
     "keywords": [
         "eleventy",
         "website",
@@ -10,7 +10,7 @@
     "version": "0.0.1",
     "author": "Young-Suk Ahn Park<ys.ahnpark@gmail.com>",
     "license": "MIT",
-    "repository": "git@gitlab.com:creasoft-dev/projects/fundamenty.git",
+    "repository": "git@github.com:creasoft-dev/fundamenty.git",
     "devDependencies": {
         "@11ty/eleventy": "^0.11.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
@@ -35,6 +35,7 @@
         "build:webpack": "webpack --mode production",
         "build:eleventy": "eleventy",
         "build": "run-s clean build:*",
+        "build_and_serve": "yarn build && yarn serve:eleventy",
         "algolia:tool": "node ./tools/algolia-tool.js"
     },
     "dependencies": {

@@ -28,7 +28,7 @@ keywords: ["eleventy", "ssg", "sitios web", "plantilla"]
 
 Simplemente clonee el [repositorio](https://github.com/creasoft-dev/fundamenty), y ejecute `yarn build && yarn serve:eleventy`
 
-### El proyecto trae incluido lo siguiente para su conveniencia:
+### El proyecto trae incluido lo siguiente para, su conveniencia:
 - Soporte de multilenguas.
 - Integración con motor de busqueda [Algolia](https://www.algolia.com/) (autocomplete).
 - [Google Analytics](https://analytics.google.com/).
@@ -37,7 +37,7 @@ Simplemente clonee el [repositorio](https://github.com/creasoft-dev/fundamenty),
 - [GitHub Actions](https://docs.github.com/en/actions) script para instalar en GitHub Pages.
 - [GitLab-CI](https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/) script para instalar on GitLab Pages
 
-### El projecto utiliza
+### El projecto utiliza:
 - [TailwindCSS](https://tailwindcss.com/)
 - [Webpack](https://webpack.js.org/)
 - [postcss-loader](https://github.com/postcss/postcss-loader)
