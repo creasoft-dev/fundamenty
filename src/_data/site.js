@@ -21,6 +21,7 @@ const site = {
     googleTagId: "", // use environment variable, see bottom of this file
 
     // Active languages
+    defaultLang: "en",
     langs: [{
         "id": "es",
         "name": "Español"
@@ -62,5 +63,8 @@ if (process.env.REPO_URL) {
     site.repoUrl = process.env.REPO_URL;
 }
 
+if (process.env.DISQUS_SITE_NAME) {
+    site.DISQUS_SITE_NAME = process.env.DISQUS_SITE_NAME;
+}
 
 module.exports = site;

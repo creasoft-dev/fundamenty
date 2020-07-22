@@ -41,13 +41,14 @@ $ npm install
 ## Serving the Site Locally
 To build and serve locally for development
 ```
-$ ELEVENTY_ENV=development yarn build && ELEVENTY_ENV=development yarn serve:eleventy
+$ yarn build_and_serve
 ```
 If you are using `npm` you can replace `yarn build` with `npm run build`, etc.
 
 ## Configuring CI/CD
-This project includes `.gitlab-ci.yml` that deploys the site on Gitlab pages. But you can deploy
-on any other SSG hosting such as GitHub pages, Netlify, [surge.sh](https://surge.sh/)
+This project scripts to deploy automatically on GitHub Pages and GitLab Pages. GitHub uses `.github\workflows\deploy-gh-pages.yml`, and GitLab uses `.gitlab-ci.yml` respectively.
+
+But you can also deploy on other SSG hosting providers such Netlify, [surge.sh](https://surge.sh/)
 
 You may provide the following environment variables for the deployment.
 
@@ -61,6 +62,8 @@ The rest of the variables are optional. If not provided, the feature will just b
 - `ALGOLIA_INDEX_NAME`     - Algolia's Index name
 - `ALGOLIA_SEARCH_API_KEY` - Algolia's Search only API Key
 - `ALGOLIA_ADMIN_API_kEY`  - Algolia's Admin API Key (for pushing posts to Algolia index)
+- `DISQUS_SITE_NAME`       - Disqus' site name, for commenting.
+
 
 For creating accounts in Google Analytics and Algolia, see the [3RD_PARTY_SERVICES.md](3RD_PARTY_SERVICES.md)
 

@@ -14,7 +14,7 @@
         gtag('config', '{{ site.googleTagId }}');
       </script>
     {% endif %}
-    <title>{{ title }}</title>
+    <title>{{ title }} - {{ site.name }}</title>
     <meta name="description" content="{{ description }}">
     <meta name="keywords" content="{{ keywords }}">
     <link rel="icon" type="image/png" href="{{ site.faviconUrl | url  }}">
@@ -75,6 +75,11 @@
       <div class="content w-full">
         {{ content | safe }}
       </div>
+      {% if not (disableComments or false) %}
+      <div class="content w-full">
+        <div id="disqus_thread"></div>
+      </div>
+      {% endif %}
     </div>
 
     <footer class="w-full bg-gray-100 mt-6 p-2 border-t-1 border-gray-300">
@@ -159,6 +164,24 @@
         }
         return false;
       }
+
+{% if site.DISQUS_SITE_NAME %}
+/**
+ * Disqus
+ */
+var disqus_config = function () {
+this.language = "{{ locale }}";
+this.page.title = '{{ title }}';
+this.page.url = '{{ site.rootUrl }}{{ page.url }}';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '{{ page.fileSlug }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://{{ site.DISQUS_SITE_NAME }}.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+{% endif %}
     </script>
   </body>
 </html>

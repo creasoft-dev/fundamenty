@@ -2,7 +2,6 @@
 permalink: /api/posts.json
 ---
 [
-  {# {% for post in collections['posts_' + lang] %} #}
   {% for post in collections.post %}
     {
       "title": "{{ post.data.title }}",
