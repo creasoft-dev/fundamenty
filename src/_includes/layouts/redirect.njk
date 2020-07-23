@@ -23,7 +23,7 @@ var locale =
     .map(language => language.substr(0, 2))
     .find(language => availableLanguages.includes(language)) || "{{ site.defaultLang }}";
 
-let redirUrl = '/' + locale + '/';
+let redirUrl = "{{ '/' | url }}" + locale + "/";
 console.log("Redirecting to :" + redirUrl);
 window.location.replace(redirUrl);
 </script>
