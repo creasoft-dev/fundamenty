@@ -74,7 +74,7 @@ async function pushToIndex(...dataFilePaths) {
 
 
 (async() => {
-    console.log('algolia-push v.%s started with args %j', APP_VERSION, args);
+    console.log('algolia-tool v.%s started with args %j', APP_VERSION, args);
     if (doClear) {
         await clearIndex();
     }

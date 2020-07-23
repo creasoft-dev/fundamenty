@@ -36,7 +36,8 @@
         "build:eleventy": "eleventy",
         "build": "run-s clean build:*",
         "build_and_serve": "yarn build && yarn serve:eleventy",
-        "algolia:tool": "node ./tools/algolia-tool.js"
+        "algolia:tool": "node ./tools/algolia-tool.js",
+        "fundamenty:tool": "node ./tools/fundamenty-tool.js"
     },
     "dependencies": {
         "dotenv": "^8.2.0"
