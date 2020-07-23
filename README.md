@@ -68,7 +68,15 @@ The rest of the variables are optional. If not provided, the feature will just b
 For creating accounts in Google Analytics and Algolia, see the [3RD_PARTY_SERVICES.md](3RD_PARTY_SERVICES.md)
 
 ## Customizing the Site and Working with Content
-Now that you have installed and served the starter project, you can configure the site branding in `./src/_data/site.js`.
+Now that you have installed and served the starter project, you can configure the site by 
+modifying the `./.fundamenty.yml` file with appropriate values, and then running 
+```shell
+$ yarn fundamenty:tool init
+```
+This will generate two files `./src/_data/site.json.gen` and `./.env.gen`. You can rename those 
+files by removing the `.gen` extension. You may need to delete the original `./src/_data/site.json` file.
+
+
 Then create site pages under `./src/{lang}/pages`, and articles/posts under `./src/{lang}/posts`.
 Those two location includes [directory data files](https://www.11ty.dev/docs/data-template-dir/) with contextual data fields `locale` and `tags`.
 
@@ -83,7 +91,7 @@ content under that directory. This is done through  the  directory data file.
 The localization of the navigation and translation were externalized in `./src/_data/l10n` directory.
 
 The list of active locales are defined in `./src/_data/site.js` data file.
-Based on the list of languages, the eleventy configuration file - `/.eleventy.js` generates 
+Based on the list of languages, the Eleventy configuration file - `/.eleventy.js` generates 
 post collections per each locale, which can be accessed by the name:
 `collections.posts_{lang}`.
 
@@ -107,17 +115,6 @@ The site content is under `./src`.
     └───layouts  - Layouts
 ```
 
-## Future Enhancements
-- Comment (Commmento, Disqus, Facebook comment, or Custom with Firebase)
-- Add `markdown` classname to markdown generated tags
-
-## For new Eleventy + TailwindCSS project
-```
-yarn add --dev @11ty/eleventy moment @11ty/eleventy-plugin-syntaxhighlight
-yarn add --dev markdown-it markdown-it-attrs
-yarn add --dev webpack webpack-cli npm-run-all rimraf
-yarn add --dev tailwindcss autoprefixer mini-css-extract-plugin css-loader postcss-loader
-```
 
 ## Next Steps
 Fore more advanced Eleventy, read the [its documentation](https://www.11ty.dev/docs/).
@@ -128,6 +125,11 @@ Especially the [documentation on page data](https://www.11ty.dev/docs/data-eleve
 ## Sites Built with Fundamenty
 - [creasoft.dev](https://creasoft.dev)
 - [empoderemosmas.com](https://empoderemosmas.com)
+
+
+## Future Enhancements to this Project
+- Improve the `tools/fundamenty-tool.js` to add/remove language packs.
+- Add `markdown` classname to markdown generated tags
 
 
 ## Credits

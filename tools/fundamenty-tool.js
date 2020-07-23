@@ -43,7 +43,7 @@ function initProject() {
             if (!fs.existsSync(dirPath)) {
                 console.log('Creating lang directory:' + dirPath);
                 fs.mkdirSync(dirPath);
-                // create {lang}.json, index.md
+                // TODO: create {lang}.json, index.md
             }
         }
     }
