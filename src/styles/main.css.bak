@@ -1,8 +1,4 @@
 @tailwind base;
-body {
-    @apply text-base
-}
-
 
 /**
  * Referenced from: https://github.com/iandinwoodie/github-markdown-tailwindcss/blob/master/markdown.css
@@ -21,10 +17,6 @@ h3 {
 }
 
 h3 {
-    @apply leading-relaxed text-xl text-teal-600;
-}
-
-h4 {
     @apply leading-relaxed text-lg text-teal-600;
 }
 
@@ -33,7 +25,7 @@ p {
 }
 
 ul {
-    @apply text-base pl-8 list-disc my-3;
+    @apply text-base pl-8 list-disc;
 }
 
 ol {

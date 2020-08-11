@@ -8,11 +8,11 @@
             "href": "/es/pages/articulos"
         },
         {
-            "icon": "fa-git",
+            "icon": "fab fa-git",
             "href": "https://github.com/creasoft-dev/fundamenty"
         },
         {
-            "icon": "fa-twitter",
+            "icon": "fab fa-twitter",
             "href": "https://twitter.com/creasoftdev"
         }
     ],

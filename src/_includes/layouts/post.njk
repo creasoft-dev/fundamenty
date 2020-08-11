@@ -19,7 +19,8 @@ layout: layouts/base.njk
             url('{{ imageUrl | url }}'); 
         width:100%;
         background-repeat: no-repeat;
-        background-position:center;">&nbsp;</div>
+        background-position:center;
+        background-size: cover">&nbsp;</div>
     {% if imageCredits %}
 <div>{{ imageCredits | safe }}</div>
     {% endif %}

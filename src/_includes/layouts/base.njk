@@ -27,7 +27,7 @@
       <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4  ">
         <div class="pl-4 flex items-center">
           <image src="{{ site.logoUrl | url }}" alt="Logo" class="h-5 mr-1"/>
-          <a  href="{{ '/' | url }} " class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" >
+          <a  href="{{ '/' | url }} " class="text-gray-900 no-underline hover:no-underline font-extrabold text-xl" >
             {{ site.name }}
           </a>
         </div>
@@ -50,11 +50,11 @@
             </div>
           {% endif %}
           </div>
-          <ul class="list-reset lg:flex justify-end items-center list-none">
+          <ul class="list-reset lg:flex justify-end items-center list-none text-sm">
             {% for menuItem in site[locale].menu.top %}
               <li class="mr-3 py-2 lg:py-0" title="{{menuItem.tooltip}}">
                 <a href="{{menuItem.href | url}}" class="inline-block py-2 px-2 text-gray-900 font-bold no-underline hover:text-indigo-600">
-                  <i class="fab {{menuItem.icon}} fill-current "></i>{{menuItem.title}}</a>
+                  <i class="{{menuItem.icon}} fill-current "></i>{{menuItem.title}}</a>
               </li>
             {% endfor %}
           </ul>

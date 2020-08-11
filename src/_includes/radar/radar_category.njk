@@ -1,0 +1,24 @@
+---
+layout: radar/radar_base.njk
+---
+
+
+<div class="content w-full">
+{{ content | safe }}
+</div>
+
+<div class="w-full flex ">
+{% for ringId, ring in rings %}
+    <div class="bg-gray-100 w-1/4 m-2">
+        <h3 class="capitalize text-center">{{ ring.label }}</h3>
+<div id="radar-items" class="w-full" >
+    {% for radarItem in radar_items  %}{% if radarItem.data.category == this_category and radarItem.data.ring == ring.label  %}
+    <div>
+    <a class="hover:bg-{{categories[radarItem.data.category].color}}-700 hover:text-white no-underline" href="{{ radarItem.url | url }}">{{ radarItem.data.title }}</a>
+    </div>
+    {% endif %}{% endfor %}
+</div>
+    </div>
+{% endfor %}
+
+</div>

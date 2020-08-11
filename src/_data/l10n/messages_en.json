@@ -1,8 +1,9 @@
 {
-    "search": "Search",
     "articles": "Articles",
-    "published_on": "Published on",
     "by": "by",
+    "published_on": "Published on",
+    "search": "Search",
     "edit_on_git": "Edit on Git",
-    "NOT_FOUND": "Oops! I am really sorry to inform that the page you are looking for does not exist."
+    "NOT_FOUND": "Oops! I am really sorry to inform that the page you are looking for does not exist.",
+    "tech_radar": "Technology Radar"
 }

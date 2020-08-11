@@ -9,11 +9,11 @@ pagination:
   alias: posts
 
 ---
-<div 
+<div
     style="background-image:
-           url('{{ "/images/background.jpg"  | url}}'); 
+           url('{{ "/images/background.jpg"  | url}}');
     height:200px;
-    background-size: 100%; 
+    background-size: 100%;
     background-position:center;">&nbsp;</div>
 
 # Build your own JAMStack site.
@@ -33,6 +33,8 @@ Just clone the [repo](https://github.com/creasoft-dev/fundamenty), and `yarn bui
 - Generation of `robots.txt` and `sitemap.xml`
 - [GitHub Actions](https://docs.github.com/en/actions) script to deploy on GitHub Pages
 - GitLab-CI script to deploy on GitLab Pages
+
+*New*: Layout for [Technology Radar](https://www.thoughtworks.com/radar). For more detail see [/en/radar/]({{ '/en/radar/' | url }})
 
 ### The project uses
 - [TailwindCSS](https://tailwindcss.com/)

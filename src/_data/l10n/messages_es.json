@@ -1,8 +1,9 @@
 {
-    "search": "Buscar",
     "articles": "Articulos",
-    "published_on": "Publicado en",
     "by": "por",
+    "published_on": "Publicado en",
+    "search": "Buscar",
     "edit_on_git": "Editar en Git",
-    "NOT_FOUND": "Chanfles! La página que esta buscando esta en el limbo"
+    "NOT_FOUND": "Chanfles! La página que esta buscando esta en el limbo",
+    "tech_radar": "Radar de Tecnología"
 }

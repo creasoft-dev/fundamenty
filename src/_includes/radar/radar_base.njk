@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="container w-full flex flex-wrap mx-auto">
+    <div class="topography-background content w-full flex rounded-lg">
+        <div id="title" class="flex-1 text-center align-middle " >
+        <a class="text-4xl font-mono font-extrabold uppercase no-underline hover:text-black" 
+            href='{{ "/" + locale + "/radar" | url }}'>{{ site[locale]._t.tech_radar }}</a>
+        </div>
+        <div id="radar-categories" class="flex-1 text-center" >
+            {% for id, category in categories  %}
+            <div class="text-white font-bold rounded-lg p-1 m-1 bg-{{category.color}}-600 hover:bg-{{category.color}}-700">
+            <a class="no-underline hover:font-bold hover:text-white" href='/{{ locale + "/radar/" + category.id | url}}'>{{ category.label }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="content w-full">
+    {{ content | safe }}
+    </div>
+    
+</div>
