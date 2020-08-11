@@ -1,18 +1,29 @@
-Technology Radar
-================
+Technology Radar Layout
+=======================
 
 This layout is inspired by the [Thoughtworks' Technology Radar](https://www.thoughtworks.com/radar).
 
 
 # Usage
-Create a folder for the technology radar, e.g. `/src/radar`
+Create a folder for the technology radar, e.g. `/src/radar`.
 Copy the file `radar.{lang}.json` and rename it as the folder name, this will make the json file Eleventy data file.
 
-The default `radar.{lang}.json` file includes definitions for `categories` and `rings`. You can change them accordingly, but
+> The default `radar.{lang}.json` file includes definitions for `categories` and `rings`. You can change them accordingly, but
 
-For each of the categories, create a page with - appropriate template suffix- and a folder with the same name.
+Then create a index page, e.g. `index.md` with the following data in the front matter:
+```yml
+layout: radar/radar_portal.njk
 
-Under each folder place the item files.
+pagination:
+  data: collections.radar
+  size: 50
+  reverse: true
+  alias: radar_items
+```
+
+Next, for each of the categories, create a page with - appropriate template suffix- and a folder with the same name.
+
+Under each folder place the tech radar item content files.
 
 ## Example folder structure
 

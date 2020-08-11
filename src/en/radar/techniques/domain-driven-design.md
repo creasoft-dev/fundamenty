@@ -1,5 +1,5 @@
 ---
-title: Domain Driven Desing
+title: Domain Driven Design
 
 date: 2020-07-25
 dateRemoved:
