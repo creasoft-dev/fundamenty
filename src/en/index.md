@@ -8,6 +8,8 @@ pagination:
   reverse: true
   alias: posts
 
+description: Fundamenty, Eleventy Starter kit with multilingual support and more.
+keywords: ["eleventy", "ssg", "JAMStack", "starter"]
 ---
 <div
     style="background-image:
@@ -22,7 +24,8 @@ The world is waiting for you to share your knowledge!
 
 ## Fundamenty, the fundamental Eleventy starter project
 
-Just clone the [repo](https://github.com/creasoft-dev/fundamenty), and `yarn build && yarn serve:eleventy`
+Just clone the [repo](https://github.com/creasoft-dev/fundamenty), and run
+`$yarn build_and_serve`
 
 ### The project includes following features:
 - Multi-language support
@@ -30,7 +33,7 @@ Just clone the [repo](https://github.com/creasoft-dev/fundamenty), and `yarn bui
 - Integration with [Algolia](https://www.algolia.com/) (autocomplete search box)
 - [Google Analytics](https://analytics.google.com/)
 - Edit on GitLab / GitHub
-- Generation of `robots.txt` and `sitemap.xml`
+- Generation of `robots.txt` and `sitemap.xml` files for SEO
 - [GitHub Actions](https://docs.github.com/en/actions) script to deploy on GitHub Pages
 - GitLab-CI script to deploy on GitLab Pages
 

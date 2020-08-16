@@ -12,11 +12,11 @@ description: Fundamenty, Proyecto plantilla de Eleventy.
 keywords: ["eleventy", "ssg", "sitios web", "plantilla"]
 ---
 
-<div 
+<div
     style="background-image:
-           url('{{ "/images/background.jpg"  | url}}'); 
+           url('{{ "/images/background.jpg" | url}}');
     height:200px;
-    background-size: 100%; 
+    background-size: 100%;
     background-position:center;">&nbsp;</div>
 
 # Construya su propio sitio web
@@ -26,14 +26,15 @@ keywords: ["eleventy", "ssg", "sitios web", "plantilla"]
 
 ## Fundamenty, el projecto fundamental para creara sitio JAMStack
 
-Simplemente clonee el [repositorio](https://github.com/creasoft-dev/fundamenty), y ejecute `yarn build && yarn serve:eleventy`
+Simplemente clonee el [repositorio](https://github.com/creasoft-dev/fundamenty), y ejecute
+`yarn build_and_serve`
 
 ### El proyecto trae incluido lo siguiente para, su conveniencia:
 - Soporte de multilenguas.
-- Integración con motor de busqueda [Algolia](https://www.algolia.com/) (autocomplete).
+- Integración con motor de búsqueda [Algolia](https://www.algolia.com/) (autocomplete).
 - [Google Analytics](https://analytics.google.com/).
 - Funcionalidad de editar en GitLab/GitHub.
-- Generación de los archivos `robots.txt` y `sitemap.xml`.
+- Generación de los archivos `robots.txt` y `sitemap.xml` para SEO.
 - [GitHub Actions](https://docs.github.com/en/actions) script para instalar en GitHub Pages.
 - [GitLab-CI](https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/) script para instalar on GitLab Pages
 
