@@ -1,6 +1,6 @@
 ---
 title: Inicio
-layout: layouts/page_with_posts.njk
+layout: layout/page_with_posts.njk
 
 pagination:
   data: collections.posts_es
@@ -27,7 +27,7 @@ keywords: ["eleventy", "ssg", "sitios web", "plantilla"]
 ## Fundamenty, el projecto fundamental para creara sitio JAMStack
 
 Simplemente clonee el [repositorio](https://github.com/creasoft-dev/fundamenty), y ejecute
-`yarn build_and_serve`
+`yarn serve`
 
 ### El proyecto trae incluido lo siguiente para, su conveniencia:
 - Soporte de multilenguas.

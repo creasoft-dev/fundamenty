@@ -1,14 +1,14 @@
 const _site = require("./site.json");
 
+let site = {
+    buildTime: new Date(),
+};
+
 /**
  * Get localization:
  * site[locale]._t.search
  * site[locale]._t.menu.top
  */
-let site = {
-    buildTime: new Date(),
-};
-
 for (lang of _site.langs) {
     site[lang.id] = {
         menu: require(`./l10n/menu_${lang.id}.json`),

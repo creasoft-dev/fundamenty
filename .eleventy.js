@@ -1,10 +1,8 @@
 require('dotenv').config();
-const moment = require('moment');
+const filters = require('./utils/filters.js')
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const site = require('./src/_data/site.json');
-
-moment.locale('en');
 
 module.exports = eleventyConfig => {
     eleventyConfig.addPlugin(syntaxHighlight);
@@ -15,41 +13,24 @@ module.exports = eleventyConfig => {
     eleventyConfig.addPassthroughCopy('src/js');
     eleventyConfig.addPassthroughCopy('src/images');
 
-
-    // date filter (localized)
-    eleventyConfig.addFilter("formatDate", function(date, format, locale) {
-        locale = locale ? locale : "en";
-        moment.locale(locale);
-        return moment(date).format(format);
-    });
-
-    // Add filter for data formatting
-    eleventyConfig.addFilter('dateIso', date => {
-        return moment(date).toISOString();
-    });
-
-
-    eleventyConfig.addFilter('jsonify', text => {
-        return JSON.stringify(text); // E.g. May 31, 2019
-    });
-
-    // Strip out html
-    eleventyConfig.addFilter('algExcerpt', function(text) {
-        //first remove code
-        text = text.replace(/<code class="language-.*?">.*?<\/code>/sg, '');
-        //now remove html tags
-        text = text.replace(/<.*?>/g, '');
-        //now limit to 5k
-        return text.substring(0, 8000); // Algolia's limit to 10K
-    });
+    // Filters
+    Object.keys(filters).forEach((filterName) => {
+        eleventyConfig.addFilter(filterName, filters[filterName])
+    })
 
     // For each language, create collection of posts with given language
+    const localizedCollections = ['post'];
     site.langs.map(langEntry => {
-        eleventyConfig.addCollection(`posts_${langEntry.id}`, function(collectionApi) {
-            return collectionApi.getFilteredByTag("post").filter(function(item) {
-                return item.data.locale === langEntry.id
+
+        for (const localizedCollection of localizedCollections) {
+            // Produces collection with the pluralized name + '_' + locale,
+            // E.g.: 'posts_en'
+            eleventyConfig.addCollection(`${localizedCollection}s_${langEntry.id}`, function (collectionApi) {
+                return collectionApi.getFilteredByTag(localizedCollection).filter(function (item) {
+                    return item.data.locale === langEntry.id
+                });
             });
-        });
+        }
     });
 
 

@@ -43,7 +43,7 @@ $ npm install
 ## Serving the Site Locally
 To build and serve locally for development
 ```
-$ yarn build_and_serve
+$ yarn serve
 ```
 If you are using `npm` you can replace `yarn build` with `npm run build`, etc.
 

@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: layouts/page_with_posts.njk
+layout: layout/page_with_posts.njk
 
 pagination:
   data: collections.posts_en
@@ -25,7 +25,7 @@ The world is waiting for you to share your knowledge!
 ## Fundamenty, the fundamental Eleventy starter project
 
 Just clone the [repo](https://github.com/creasoft-dev/fundamenty), and run
-`$yarn build_and_serve`
+`$yarn serve`
 
 ### The project includes following features:
 - Multi-language support

@@ -2,12 +2,12 @@
 layout: radar/radar_base.njk
 ---
 <h1>{{ title }}</h1>
-<p class="content-center">{{ site[locale]._t.published_on }}: {{ date  | formatDate("LL", locale) }}, {{ site[locale]._t.by }}  {{ author }}</p>
+<p class="content-center">{{ site[locale]._t.published_on }}: {{ date  | formatDate("DD", locale) }}, {{ site[locale]._t.by }}  {{ author }}</p>
 
 {{ content | safe }}
 
 <hr />
-<p class="content-center">{{ site[locale]._t.published_on }}: {{ date  | formatDate("LL", locale) }}, {{ site[locale]._t.by }}  {{ author }}</p>
+<p class="content-center">{{ site[locale]._t.published_on }}: {{ date  | formatDate("DD", locale) }}, {{ site[locale]._t.by }}  {{ author }}</p>
 {% if site.repoUrl %}
 <a href="{{ site.repoUrl }}/edit/master/{{page.inputPath}}">{{ site[locale]._t.edit_on_git }}</a>
 {% endif %}

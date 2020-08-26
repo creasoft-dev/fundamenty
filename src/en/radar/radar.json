@@ -1,36 +1,38 @@
 {
     "layout": "radar/radar_item.njk",
+    "radar": {
+        "pathPrefix": "radar",
+        "title": "Technology Radar",
 
-    "categories": {
-        "techniques": {
-            "id": "techniques",
-            "label": "Techniques",
-            "color": "green"
+        "categories": {
+            "techniques": {
+                "id": "techniques",
+                "label": "Techniques",
+                "color": "green"
+            },
+            "tools": {
+                "id": "tools",
+                "label": "Tools",
+                "color": "blue"
+            }
         },
-        "tools": {
-            "id": "tools",
-            "label": "Tools",
-            "color": "blue"
+        "rings": {
+            "adopt": {
+                "label": "adopt",
+                "color": "green"
+            },
+            "trial": {
+                "label": "trial",
+                "color": "teal"
+            },
+            "asses": {
+                "label": "asses",
+                "color": "yellow"
+            },
+            "hold": {
+                "label": "hold",
+                "color": "yellow"
+            }
         }
-
-    },
-    "rings": {
-        "adopt": {
-            "label": "adopt",
-            "color": "green"
-        },
-        "trial": {
-            "label": "trial",
-            "color": "teal"
-        },
-        "asses": {
-            "label": "asses",
-            "color": "yellow"
-        },
-        "hold": {
-            "label": "hold",
-            "color": "yellow"
-        }
-
     }
 }

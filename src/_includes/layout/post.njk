@@ -1,14 +1,14 @@
 ---
-layout: layouts/base.njk
+layout: layout/base.njk
 ---
 <h1>{{ title }}</h1>
-<p class="content-center">{{ site[locale]._t.published_on }}: {{ date  | formatDate("LL", locale) }}, {{ site[locale]._t.by }}  {{ author }}</p>
+<p class="content-center">{{ site[locale]._t.published_on }}: {{ date  | formatDate("DD", locale) }}, {{ site[locale]._t.by }}  {{ author }}</p>
 
 {% if videoUrl %}
 <div class="flex justify-center">
-    <iframe src="{{ videoUrl | url }} " 
-    width="560" height="315" frameborder="0" 
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+    <iframe src="{{ videoUrl | url }} "
+    width="560" height="315" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen ></iframe>
 </div>
 {% endif %}
@@ -16,7 +16,7 @@ layout: layouts/base.njk
 {% if imageUrl %}
 <div class="w-auto">
         <div class="h-64" style="background-image:
-            url('{{ imageUrl | url }}'); 
+            url('{{ imageUrl | url }}');
         width:100%;
         background-repeat: no-repeat;
         background-position:center;
@@ -32,7 +32,7 @@ layout: layouts/base.njk
 
 
 <hr />
-<p class="content-center">{{ site[locale]._t.published_on }}: {{ date  | formatDate("LL", locale) }}, {{ site[locale]._t.by }}  {{ author }}</p>
+<p class="content-center">{{ site[locale]._t.published_on }}: {{ date  | formatDate("DD", locale) }}, {{ site[locale]._t.by }}  {{ author }}</p>
 {% if site.repoUrl %}
 <a href="{{ site.repoUrl }}/edit/master/{{page.inputPath}}">{{ site[locale]._t.edit_on_git }}</a>
 {% endif %}
