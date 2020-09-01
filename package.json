@@ -14,6 +14,8 @@
     "devDependencies": {
         "@11ty/eleventy": "^0.11.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+        "@appbaseio/reactivesearch-vue": "^1.7.4",
+        "@elastic/elasticsearch": "^7.9.0",
         "alex": "^8.2.0",
         "algoliasearch": "^4.3.0",
         "autocomplete.js": "^0.37.1",
@@ -26,6 +28,9 @@
         "postcss-loader": "^3.0.0",
         "rimraf": "^3.0.2",
         "tailwindcss": "^1.4.6",
+        "vue": "^2.6.12",
+        "vue-loader": "^15.9.3",
+        "vue-template-compiler": "^2.6.12",
         "webpack": "^4.43.0",
         "webpack-cli": "^3.3.12"
     },
@@ -38,6 +43,7 @@
         "build:eleventy": "eleventy",
         "build": "run-s clean build:*",
         "algolia:tool": "node ./tools/algolia-tool.js",
+        "es:tool": "node ./tools/es-tool.js",
         "alex": "alex ./src/en",
         "fundamenty:tool": "node ./tools/fundamenty-tool.js"
     },

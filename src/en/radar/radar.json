@@ -1,7 +1,7 @@
 {
     "layout": "radar/radar_item.njk",
     "radar": {
-        "pathPrefix": "radar",
+        "id": "radar",
         "title": "Technology Radar",
 
         "categories": {

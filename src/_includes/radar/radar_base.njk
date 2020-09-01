@@ -5,13 +5,15 @@ layout: layout/base.njk
 <div class="container w-full flex flex-wrap mx-auto" >
     <div class="topography-background content w-full flex rounded-lg" style="background-color: {{ radar.bgColor }}; ">
         <div class="flex-1 text-center align-middle " >
+        {% set radarRootPageUrl = '/' + locale + '/' + radar.id + '/' %}
         <a class="text-4xl font-mono font-extrabold uppercase no-underline hover:text-black"
-            href='{{ "/" + locale + "/" + radar.pathPrefix | url }}'>{{ radar.title }}</a>
+            href="{{ radarRootPageUrl | url }}">{{ radar.title }}</a>
         </div>
         <div id="radar-categories" class="flex-1 text-center" >
             {% for id, category in radar.categories  %}
             <div class="text-white font-bold rounded-lg p-1 m-1 bg-{{category.color}}-600 hover:bg-{{category.color}}-700">
-            <a class="no-underline hover:font-bold hover:text-white" href='/{{ locale + "/" + radar.pathPrefix + "/" + category.id | url}}'>{{ category.label }}</a>
+            {% set categoryPageUrl = '/' + locale + '/' + radar.id + '/' + category.id %}
+            <a class="no-underline hover:font-bold hover:text-white" href="{{ categoryPageUrl | url }}">{{ category.label }}</a>
             </div>
             {% endfor %}
         </div>
