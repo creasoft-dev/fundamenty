@@ -117,6 +117,13 @@ The site content is under `./src`.
     └───layouts  - Layouts
 ```
 
+## Creating a Content
+You can use fundamenty-cli tool to create scaffolding files.
+To create a post:
+```
+$ yarn fun-cli post/item "My Post Title" -l en
+```
+Will generate under `/src/en/posts/yyyy-mm-dd-my-post-title.md` file. Then just populate the front matter and the body with Markdown.
 
 ## Next Steps
 Fore more advanced Eleventy, read the [its documentation](https://www.11ty.dev/docs/).
@@ -130,7 +137,7 @@ Especially the [documentation on page data](https://www.11ty.dev/docs/data-eleve
 
 
 ## Future Enhancements to this Project
-- Improve the `tools/fundamenty-tool.js` to add/remove language packs.
+- Improve the `tools/fundamenty-cli.js` to add/remove language packs.
 - Add `markdown` classname to markdown generated tags
 
 

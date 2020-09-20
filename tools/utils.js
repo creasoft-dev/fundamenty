@@ -61,11 +61,11 @@ function pathJoin(...paths){
  * Convert a string into a snake case
  * @param {string} str
  */
-function toSnakeCase(str) {
+function toSnakeCase(str, joinChar = '_') {
     return str && str
         .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
         .map(x => x.toLowerCase())
-        .join('_');
+        .join(joinChar);
 }
 
 
@@ -186,7 +186,7 @@ function generateFileFromTemplate(rootPath, templateDir, templateName, params, m
     }
 
     const todayIso = (new Date()).toISOString().substring(0,10);
-    let filename = toSnakeCase(params.title) + '.md';
+    let filename = toSnakeCase(params.title, '-') + '.md';
     if (_.get(opts, 'prependDate', false)) {
         filename = todayIso + '-' + filename;
     }
