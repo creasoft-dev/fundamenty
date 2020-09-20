@@ -1,18 +1,13 @@
 const utils = require('../../utils');
 
 const META = {
-    name: 'radar/item',
+    name: 'post/item',
     dir: __dirname,
-    description: "Create a new Radar item: creates a {lang}/{radar}/{category}/{item}.md file",
+    description: "Create a new Post item: creates a {lang}/posts/{item}.md file",
     command: {
         arguments: '<title>',
-        requiredOptions: [
-            '--cate <cate>', // category
-            '--radar <radar>' // radar name
-        ],
         options: [
-            '-l, --lang <lang>', // language
-            '--ring <ring>' // ring
+            '-l, --lang <lang>' // language
         ]
     }
 };
@@ -31,7 +26,7 @@ const run = async (config, context) => {
 
     const inputPath = utils.getInputPath(config);
 
-    utils.generateFileFromTemplate(inputPath, __dirname, '$radar-item.md.njk', params, {author: ''}, utils.pathJoin(params.radar, params.cate));
+    utils.generateFileFromTemplate(inputPath, __dirname, '$post-item.md.njk', params, {author: ''}, 'posts', {prependDate: true});
 }
 
 module.exports = {

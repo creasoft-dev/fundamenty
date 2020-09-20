@@ -1,6 +1,9 @@
+require('dotenv').config();
 const path = require('path');
 const chalk = require('chalk');
 const commander = require('commander');
+
+const utils = require('./utils');
 
 const packageJson = require('../package.json');
 
@@ -44,18 +47,23 @@ function init() {
 
 }
 
-init();
-scriptContext.verbose && console.log('Argv: %j', process.argv);
+(async() => {
+    init();
 
-const scriptPath = SCRIPT_ROOT + scriptContext.name;
-scriptContext.verbose && console.log('Loading script [%s] and passing args: %j', scriptPath, scriptContext.args);
+    utils.logger.logLevel = scriptContext.verbose ? 0 : 1;
+    utils.logger.debug('Argv: %j', process.argv);
 
-const script = require(scriptPath);
+    const scriptPath = SCRIPT_ROOT + scriptContext.name;
+    utils.logger.debug('Loading script [%s] and passing args: %j', scriptPath, scriptContext.args);
 
-try {
-    const result = script.run(config, scriptContext);
-    scriptContext.verbose && console.log('Script [%s] completed', scriptContext.name);
-} catch {
-    process.exit(1);
-}
-process.exit(0);
+    const script = require(scriptPath);
+
+    try {
+        const result = await script.run(config, scriptContext);
+        utils.logger.info('Script [%s] completed', scriptContext.name);
+    } catch (error) {
+        utils.logger.error('Script [%s] failed with error ', error);
+        process.exit(1);
+    }
+    process.exit(0);
+})();

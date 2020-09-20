@@ -7,7 +7,7 @@
         "website",
         "ssg"
     ],
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "Young-Suk Ahn Park<ys.ahnpark@gmail.com>",
     "license": "MIT",
     "repository": "git@github.com:creasoft-dev/fundamenty.git",
@@ -23,6 +23,7 @@
         "chalk": "^4.1.0",
         "css-loader": "^3.6.0",
         "dotenv": "^8.2.0",
+        "jest": "^26.4.2",
         "lodash": "^4.17.20",
         "luxon": "^1.24.1",
         "mini-css-extract-plugin": "^0.9.0",
@@ -47,7 +48,8 @@
         "algolia:tool": "node ./tools/algolia-tool.js",
         "es:tool": "node ./tools/es-tool.js",
         "alex": "alex ./src/en",
-        "fundamenty:cli": "node ./tools/fundamenty-cli.js",
+        "fun-cli": "node ./tools/fundamenty-cli.js",
+        "fun-test": "node ./tools/fundamenty-cli.js  post/item \"Hello my world\" -l en",
         "fundamenty:tool": "node ./tools/fundamenty-tool.js"
     },
     "dependencies": {
