@@ -1,6 +1,6 @@
 ---
 title: Inicio
-layout: layout/page_with_posts.njk
+layout: layout/landing.njk
 
 pagination:
   data: collections.posts_es
