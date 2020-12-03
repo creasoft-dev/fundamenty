@@ -9,23 +9,23 @@ body {
  */
 
 h1 {
-    @apply leading-relaxed text-4xl text-teal-800 font-bold;
+    @apply leading-relaxed text-4xl text-indigo-800 font-bold;
 }
 
 h2 {
-    @apply leading-relaxed text-3xl text-teal-600;
+    @apply leading-relaxed text-3xl text-indigo-600;
 }
 
 h3 {
-    @apply leading-relaxed text-2xl text-teal-600;
+    @apply leading-relaxed text-2xl text-indigo-600;
 }
 
 h3 {
-    @apply leading-relaxed text-xl text-teal-600;
+    @apply leading-relaxed text-xl text-indigo-600;
 }
 
 h4 {
-    @apply leading-relaxed text-lg text-teal-600;
+    @apply leading-relaxed text-lg text-indigo-600;
 }
 
 p {
@@ -53,7 +53,7 @@ td {
 }
 
 blockquote {
-    @apply m-1 p-2 bg-orange-100;
+    @apply m-1 p-2 bg-yellow-100;
 }
 
 a {
