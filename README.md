@@ -107,7 +107,7 @@ The site content is under `./src`.
 │   └───posts    - Site posts (e.g. blog articles)
 ├───images       - Images
 ├───scripts      -
-│   ├ main.js    - Main JS file webapack uses to build the asset bundle.
+│   ├ main.js    - Main JS file webpack uses to build the asset bundle.
 │   └ algolia.js - Site posts (blog articles)
 ├───styles       - Tailwind's CSS styling
 ├───_data        - Data/configuration file.
