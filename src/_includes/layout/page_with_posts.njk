@@ -1,0 +1,23 @@
+---
+layout: layout/base.njk
+# Use the below pattern
+# pagination:
+#  data: collections.posts_$LOCALE
+#  size: 10
+#  reverse: true
+#  alias: posts
+---
+
+{{ content | safe }}
+
+
+<hr class="mt-5"/>
+<h2 class="leading-normal break-words" >{{ site[locale]._t.articles }}</h2>
+{% for post in posts %}
+  <article>
+    <h3>
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+    </h3>
+    {{ post.date | formatDate("DD", locale) }}
+  </article>
+{% endfor %}

@@ -1,0 +1,107 @@
+---
+layout: archirepo/archirepo_base.njk
+---
+<p class="content-center text-sm text-gray-600">{{ site[locale]._t.updated_on }}: {{ meta.update  | formatDate("DD", locale) }}, {{ site[locale]._t.by }}  {{ meta.author }}</p>
+
+{% if imageUrl %}
+<div class="w-auto">
+        <div class="h-64" style="background-image:
+            url('{{ imageUrl | url }}');
+        width:100%;
+        background-repeat: no-repeat;
+        background-position:center;
+        background-size: cover">&nbsp;</div>
+    {% if imageCredits %}
+<div class="text-xs text-gray-600">{{ imageCredits | safe }}</div>
+    {% endif %}
+</div>
+{% endif %}
+
+<div>
+    <div class="float-right ml-4 my-2 bg-indigo-100 p-2">
+        {% set productLogUrl = '/images/products/' + meta.logo %}
+        <img src="{{ productLogUrl | url }}" class="h-7" />
+        <h4>Product Brief</h4>
+        <table class="text-sm bg-white">
+            <tbody>
+                <tr>
+                    <td>Phase</td>
+                    <td>{{ product.phase }}</td>
+                </tr>
+                <tr>
+                    <td>Site</td>
+                    <td><a href="{{ product.link }}">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Business Func</td>
+                    <td>{{ product.businessFunction }}</td>
+                </tr>
+                <tr>
+                    <td>Team Lead</td>
+                    <td>{{ product.teamLead }}</td>
+                </tr>
+                <tr>
+                    <td>Tech Lead</td>
+                    <td>{{ product.techLead }}</td>
+                </tr>
+                <tr>
+                    <td>Repo</td>
+                    <td><a href="{{ product.repos[0] }}">Link</a></td>
+                </tr>
+            </tobdy>
+        </table>
+        <h4>Technical Brief</h4>
+        <table class="text-xs bg-white">
+            <tbody>
+                <tr>
+                    <td>Arch Drivers</td>
+                    <td>{{ technical.architecturalDrivers }}</td>
+                </tr>
+                <tr>
+                    <td>Cloud Provider</td>
+                    <td>{{ technical.cloudProvider }}</td>
+                </tr>
+                <tr>
+                    <td>Container Orch.</td>
+                    <td>{{ technical.containerOrchestrator }}</td>
+                </tr>
+                <tr>
+                    <td>Prog Langs</td>
+                    <td>{{ technical.progLanguages }}</td>
+                </tr>
+                <tr>
+                    <td>Tech Stack</td>
+                    <td>{{ technical.techStack }}</td>
+                </tr>
+                <tr>
+                    <td>Archi Styles</td>
+                    <td>{{ technical.archiStyles }}</td>
+                </tr>
+                <tr>
+                    <td>Shared Servs</td>
+                    <td>{{ technical.sharedServices }}</td>
+                </tr>
+                <tr>
+                    <td>CI / CD</td>
+                    <td>{{ technical.ci }} / {{ technical.cd }}</td>
+                </tr>
+                <tr>
+                    <td>Security</td>
+                    <td>{{ technical.security }}</td>
+                </tr>
+                <tr>
+                    <td>Observability</td>
+                    <td>{{ technical.observability }}</td>
+                </tr>
+            </tobdy>
+        </table>
+    </div>
+
+    <div>{{ content | safe }}<div>
+</div>
+
+<hr />
+<p class="content-center text-sm text-gray-600">{{ site[locale]._t.updated_on }}: {{ meta.update  | formatDate("DD", locale) }}, {{ site[locale]._t.by }}  {{ meta.author }}</p>
+{% if site.repoUrl %}
+<a class="text-sm" href="{{ site.repoUrl }}/edit/master/{{page.inputPath}}">{{ site[locale]._t.edit_on_git }}</a>
+{% endif %}

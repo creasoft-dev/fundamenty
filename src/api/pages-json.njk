@@ -1,0 +1,15 @@
+---
+permalink: /api/pages.json
+---
+[
+  {% for page in collections.page  %}
+    {
+      "title": "{{ page.data.title }}",
+      "lang": "{{ page.data.locale }}",
+      "tags": "{{ page.data.tags }}",
+      "url": "{{ page.url }}",
+      "objectID": "{{ page.url }}",
+      "content": "{{ page.templateContent  | algExcerpt | jsonify }}"
+    }{{ '' if loop.last else ',' }}
+  {% endfor  %}
+]

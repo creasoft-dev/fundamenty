@@ -1,0 +1,18 @@
+{
+    "repoUrl": "{{ repoUrl }}",
+    "rootUrl": "{{ rootUrl }}",
+
+    "name": "{{ name }}",
+    "logoUrl": "/images/logo.png",
+    "faviconUrl": "/images/logo.ico",
+    "googleTagId": "", 
+
+    "defaultLang": "{{ defaultLang }}",
+    "langs": [{% for lang in langs %}
+        { 
+            "id": "{{ lang.id }}",
+            "name": "{{ lang.name }}"
+        }{{ '' if loop.last else ',' }}
+    {% endfor %}]
+
+}

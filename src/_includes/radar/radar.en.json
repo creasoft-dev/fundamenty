@@ -1,0 +1,36 @@
+{
+    "layout": "radar/radar_item.njk",
+
+    "categories": {
+        "techniques": {
+            "id": "techniques",
+            "label": "Techniques",
+            "color": "green"
+        },
+        "tools": {
+            "id": "tools",
+            "label": "Tools",
+            "color": "blue"
+        }
+
+    },
+    "rings": {
+        "adopt": {
+            "label": "adopt",
+            "color": "green"
+        },
+        "trial": {
+            "label": "trial",
+            "color": "teal"
+        },
+        "asses": {
+            "label": "asses",
+            "color": "yellow"
+        },
+        "hold": {
+            "label": "hold",
+            "color": "yellow"
+        }
+
+    }
+}

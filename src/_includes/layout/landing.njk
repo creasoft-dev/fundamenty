@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="{{ locale }}">
+  <head profile="http://www.w3.org/2005/10/profile">
+    {% if site.googleTagId %}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleTagId }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', '{{ site.googleTagId }}');
+      </script>
+    {% endif %}
+    <title>{{ title }} - {{ site.name }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+    <link rel="icon" type="image/png" href="{{ site.faviconUrl | url  }}">
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/main.css' | url }}"/>
+    <link href="https://unpkg.com/prismjs@1.21.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <style>
+		.hero {
+      background: url(https://cdn.pixabay.com/photo/2016/10/11/21/43/geometric-1732847_1280.jpg) no-repeat center center;
+      background-size: cover;
+		}
+	  </style>
+  </head>
+  <body>
+    <nav id="header" class=" fixed w-full z-10 top-0 bg-gray-100 shadow-md bg-opacity-0 text-white ">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4  ">
+        <div class="pl-4 flex items-center">
+          <image src="{{ site.logoUrl | url }}" alt="Logo" class="h-5 mr-1"/>
+          <a  href="{{ '/' | url }} " class="no-underline hover:no-underline font-extrabold text-xl" >
+            {{ site.name }}
+          </a>
+        </div>
+        <div class="block md:hidden pr-4">
+          <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-purple-500 appearance-none focus:outline-none">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="w-full flex-grow md:flex  md:content-center md:items-center md:w-auto hidden md:block mt-2 md:mt-0 z-20" id="nav-content">
+          <div class="flex-1 w-full mx-auto max-w-sm content-center py-4 md:py-0">
+          {% if site.enableAlgolia %}
+            <div class="relative pull-right pl-4 pr-4 md:pr-0">
+              <input id="searchbox" type="search" placeholder="{{ site[locale]._t.search }}" class="w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-purple-500 rounded py-1 px-2 pl-10 appearance-none leading-normal">
+              <div class="absolute search-icon" style="top: 0.375rem;left: 1.75rem;">
+                <img src="{{ '/images/algolia-blue-mark.png' | url }}" class="h-5"/>
+              </div>
+            </div>
+          {% endif %}
+          </div>
+          <ul class="list-reset md:flex justify-end items-center list-none text-sm">
+            {% for menuItem in site[locale].menu.top %}
+              <li class="mr-3 py-2 md:py-0" title="{{menuItem.tooltip}}">
+                <a href="{{menuItem.href | url}}" class="inline-block py-2 px-2 font-bold no-underline hover:underline hover:bg-indigo-800 bg:rounded-md hover:text-white  uppercase">
+                  <i class="{{menuItem.icon}} fill-current "></i>{{menuItem.title}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="w-full flex mx-auto hero">
+      <div id="hero" class="mt-24 container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div id="hero-lable" class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+          <span class="text-5xl text-white">{{ title }}<span>
+        </div>
+        <div id="hero-visual" class="w-full md:w-3/5 py-6 text-center">
+          <span class="text-lg text-white">
+            <img class="w-2 md:w-4/5 z-50" src="/images/logo.png">
+          <span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 ">
+      <div class="content w-full text-gray-700  p-2">
+        {{ content | safe }}
+      </div>
+
+      <div class="content w-full text-gray-700 bg-gray-100 shadow-md rounded-md p-2">
+      <a href="{{ "/en/pages/articles" | url}}"><h2 class="leading-normal break-words" >{{ site[locale]._t.articles }}</h2></a>
+      {% for post in posts %}
+        <article >
+          <div>
+            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          </div>
+          {{ post.date | formatDate("DD", locale) }}
+        </article>
+      {% endfor %}
+      </div>
+
+
+      {% if not (disableComments or false) %}
+      <div class="content w-full">
+        <div id="disqus_thread"></div>
+      </div>
+      {% endif %}
+    </div>
+
+    {% include './footer.njk' %}
+
+    <script src="{{ '/assets/main.js' | url }}"></script>
+
+    <script>
+
+      /* https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8 */
+      /* Toggle dropdown list */
+
+      var navMenuDiv = document.getElementById("nav-content");
+      var navMenu = document.getElementById("nav-toggle");
+
+      var helpMenuDiv = document.getElementById("menu-content");
+      var helpMenu = document.getElementById("menu-toggle");
+
+      document.onclick = check;
+
+      function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, navMenu)) {
+            // click on the link
+            if (navMenuDiv.classList.contains("hidden")) {
+              navMenuDiv
+                .classList
+                .remove("hidden");
+            } else {
+              navMenuDiv
+                .classList
+                .add("hidden");
+            }
+          } else {
+            // click both outside link and outside menu, hide menu
+            navMenuDiv
+              .classList
+              .add("hidden");
+          }
+        }
+
+        //Help Menu
+        if (!checkParent(target, helpMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, helpMenu)) {
+            // click on the link
+            if (helpMenuDiv.classList.contains("hidden")) {
+              helpMenuDiv
+                .classList
+                .remove("hidden");
+            } else {
+              helpMenuDiv
+                .classList
+                .add("hidden");
+            }
+          } else {
+            // click both outside link and outside menu, hide menu
+            helpMenuDiv
+              .classList
+              .add("hidden");
+          }
+        }
+
+      }
+
+      function checkParent(t, elm) {
+        while (t.parentNode) {
+          if (t == elm) {
+            return true;
+          }
+          t = t.parentNode;
+        }
+        return false;
+      }
+
+// https://github.com/tailwindtoolbox/Landing-Page/blob/master/index.html
+
+  var header = document.getElementById("header");
+
+  document.addEventListener('scroll', function() {
+    /*Apply classes for slide in bar*/
+	  scrollpos = window.scrollY;
+
+    if(scrollpos > 10){
+	    header.classList.remove("bg-opacity-0");
+      header.classList.remove("text-white");
+    }
+    else {
+      // Transparent
+      header.classList.add("bg-opacity-0");
+      header.classList.add("text-white");
+    }
+  });
+
+
+{% if site.DISQUS_SITE_NAME %}
+/**
+ * Disqus
+ */
+var disqus_config = function () {
+this.language = "{{ locale }}";
+this.page.title = '{{ title }}';
+this.page.url = '{{ site.rootUrl }}{{ page.url }}';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '{{ page.fileSlug }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://{{ site.DISQUS_SITE_NAME }}.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+{% endif %}
+    </script>
+  </body>
+</html>

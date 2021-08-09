@@ -1,0 +1,18 @@
+---
+permalink: /api/products.json
+---
+[
+  {% for item in collections.product  %}{% set data = item.data  %}
+    {
+      "title": "{{ data.title }}",
+      "lang": "{{ data.locale }}",
+      "tags": "{{ data.tags }}",
+      "product": {{ data.product | dump | safe }},
+      "technical": {{ data.technical | jsonify | safe }},
+      "meta": {{ data.meta | jsonify | safe }},
+      "url": "{{ item.url }}",
+      "objectID": "{{ item.url }}",
+      "content": "{{ item.templateContent  | algExcerpt | jsonify }}"
+    }{{ '' if loop.last else ',' }}
+  {% endfor  %}
+]

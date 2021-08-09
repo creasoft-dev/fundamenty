@@ -1,0 +1,83 @@
+---
+title: API Browser
+layout: layout/base.njk
+---
+
+<div>{{ content | safe }}<div>
+
+<h2>Directory</h2>
+<table id="apispec-items" class="table-auto" >
+    <thead class="bg-gray-200">
+        <tr class="text-sm">
+            <th onClick="sortTable('apispec-items', 0)">Domain</th>
+            <th onClick="sortTable('apispec-items', 1)">Name</th>
+            <th>Doc Page</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for apiName, api in apis  %}
+      {% set specUrl = '/apispecs/' + apiName + '.yml' %}
+        <tr class="text-sm">
+            <td>{{ api.domain }}</td>
+            <td>{{ api.name }}</td>
+            <td>
+            {# <a href="{{ '../apiredoc/?source=' + specUrl | url }}">
+            Redoc</a> |  #}
+            <a href="{{ '../apiswagger/?source=' + specUrl | url }}">
+            Swagger</a>
+            </td>
+            <td>{{ api.description }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<br /><hr />
+
+<a href="{{ site.repoUrl }}/edit/master/src{{page.filePathStem}}.json">{{ site[locale]._t.edit_on_git }} the manifest file.</a>
+
+<blockquote class="text-sm"> NOTE: In order for the change in the spec source or the manifest above to be reflected,
+you need to process it manually:
+<p>1. From the repo, run the cli tool: <code>$yarn fun-apibro</code>
+<br/>2. Push the repo to gitlab. And wait until GitLab CI complets deployment</p>
+</blockquote>
+
+
+<script>
+function sortTable(tableId, colNum) {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById(tableId);
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("TD")[colNum];
+      y = rows[i + 1].getElementsByTagName("TD")[colNum];
+      // Check if the two rows should switch place:
+      if (x.innerText.toLowerCase() > y.innerText.toLowerCase()) {
+        // If so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+</script>

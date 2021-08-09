@@ -1,0 +1,22 @@
+---
+permalink: /api/radar.json
+---
+[
+  {% for item in collections.radar %}
+    {
+      "title": "{{ item.data.title }}",
+      "lang": "{{ item.data.locale }}",
+      "date": "{{ item.data.date | dateIso }}",
+      "tags": "{{ item.data.tags }}",
+      "url": "{{ item.url }}",
+      "keywords": "{{ item.data.keywords }}",
+      "objectID": "{{ item.url }}",
+      "radar_id": "{{ item.data.radar.id }}",
+      "radar_category": "{{ item.data.category }}",
+      "radar_ring": "{{ item.data.ring }}",
+      "content": "{{ item.templateContent  | algExcerpt | jsonify }}",
+      "homepage": "{{ item.data.homepage }}",
+      "repo": "{{ item.data.repo }}"
+    }{{ '' if loop.last else ',' }}
+  {% endfor  %}
+]
