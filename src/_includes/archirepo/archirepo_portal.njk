@@ -1,0 +1,84 @@
+---
+layout: archirepo/archirepo_base.njk
+---
+
+<div class="content w-full">
+{{ content | safe }}
+</div>
+
+<h3>Product List</h3>
+
+<table id="radar-items" class="table-auto" >
+    <thead class="bg-gray-200">
+        <tr class="text-sm">
+            <th onClick="sortTable('radar-items', 0)">Name</th>
+            <th></th>
+            <th onClick="sortTable('radar-items', 1)">Business Function</th>
+            <th>Product Link</th>
+            <th>Tech Stack</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for architecture in architectures  %}
+        {% set data = architecture.data %}
+        {% set productLogUrl = '/images/products/' + data.meta.logo %}
+        <tr class="text-sm">
+            <td><a href="{{ architecture.url | url }}">
+                {{ data.product.name}}
+            </td>
+            <td>{% if data.meta.logo %}<img src="{{ productLogUrl | url }}" class="h-7" />{% endif %}</td>
+            <td>{{ data.product.businessFunction}}</td>
+            <td>{% if data.product.link %}<a href="{{ data.product.link | url }}" >link</a>{% endif %}</td>
+            <td>{{ data.technical.techStack }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<p/>
+<blockquote class="text-sm">
+<p>To add item in the list, create a new markdown file under <code>/src/en/archi/repo</code> 
+.</p>
+
+<p>There is a script that generates the mardown template file:
+<pre class="bg-gray-900 text-gray-300">[portal]$ yarn fun-cli archi/item "Title" -l en</pre>
+</p>
+</blockquote>
+
+<script>
+function sortTable(tableId, colNum) {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById(tableId);
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("TD")[colNum];
+      y = rows[i + 1].getElementsByTagName("TD")[colNum];
+      // Check if the two rows should switch place:
+      if (x.innerText.toLowerCase() > y.innerText.toLowerCase()) {
+        // If so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+</script>

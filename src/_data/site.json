@@ -1,0 +1,18 @@
+{
+    "repoUrl": "https://github.com/creasoft-dev/fundamenty",
+    "rootUrl": "https://fundamenty.netlify.app",
+
+    "name": "Fundamenty",
+    "logoUrl": "/images/logo.png",
+    "faviconUrl": "/images/logo.ico",
+    "googleTagId": "",
+
+    "defaultLang": "en",
+    "langs": [{
+        "id": "en",
+        "name": "English"
+    }, {
+        "id": "es",
+        "name": "Español"
+    }]
+}

@@ -1,0 +1,36 @@
+{
+    "layout": "radar/radar_item.njk",
+
+    "categories": {
+        "tecnicas": {
+            "id": "tecnicas",
+            "label": "Técnicas",
+            "color": "green"
+        },
+        "herramientas": {
+            "id": "herramientas",
+            "label": "Herramientas",
+            "color": "blue"
+        }
+
+    },
+    "rings": {
+        "adopt": {
+            "label": "adoptar",
+            "color": "green"
+        },
+        "trial": {
+            "label": "probar",
+            "color": "teal"
+        },
+        "asses": {
+            "label": "evaluar",
+            "color": "yellow"
+        },
+        "hold": {
+            "label": "aguantar",
+            "color": "yellow"
+        }
+
+    }
+}

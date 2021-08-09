@@ -1,0 +1,21 @@
+---
+layout: radar/radar_base.njk
+---
+
+<div class="content w-full">
+{{ content | safe }}
+</div>
+
+
+<h1>Blips</h1>
+
+<div id="radar-items" class="w-full" >
+    {% for radarItem in radar_items  %}
+    <div class="">
+    <a class="hover:bg-{{radar.categories[radarItem.data.category].color}}-700 hover:text-white  no-underline" href="{{ radarItem.url | url }}">{{ radarItem.data.title }}</a>
+    <span class="inline-block bg-{{radar.categories[radarItem.data.category].color}}-200 text-xs px-2 rounded-lg">
+        {{ radarItem.data.category }}
+    </span>
+    </div>
+    {% endfor %}
+</div>
