@@ -1,24 +1,25 @@
 import '../styles/main.css';
-import '../styles/algolia.css';
 import '../styles/radar.css';
-import './algolia.js';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Search from './Search';
+import ArchiSearch from './ArchiSearch';
+import ApiDocSwagger from './ApiDocSwagger';
 
-import Vue from 'vue/dist/vue.js'
 
-import Search from './Search.vue';
-import ReactiveSearch from '@appbaseio/reactivesearch-vue';
+/**
+ * NOTE: You can turn on the below components when the backend services are fully configured
+ */
+const ENABLE = false;
 
-Vue.config.productionTip = false;
-Vue.use(ReactiveSearch);
+// TODO: Find a better way to render the dom 
+const searchContainer = document.querySelector('#search-container');
+ENABLE && (searchContainer) && ReactDOM.render(<Search/>, searchContainer);
 
-var app = new Vue({
-    el: '#vue-container',
-    data: {
-        message: 'Vue is working!'
-    },
-    components: {
-        Search
-    }
-});
+// Instantiate Product component
+const archisearchContainer = document.querySelector('#archisearch-container');
+ENABLE && (archisearchContainer) && ReactDOM.render(<ArchiSearch/>, archisearchContainer);
 
-// console.log(Search);
+// Instantiate API Swagger component
+const apiswaggerContainer = document.querySelector('#apiswagger-container');
+ENABLE && (apiswaggerContainer) && ReactDOM.render(<ApiDocSwagger/>, apiswaggerContainer);

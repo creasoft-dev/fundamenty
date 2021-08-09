@@ -19,18 +19,20 @@ layout: archirepo/archirepo_base.njk
 
 <div>
     <div class="float-right ml-4 my-2 bg-indigo-100 p-2">
+        {% if meta.logo %}
         {% set productLogUrl = '/images/products/' + meta.logo %}
         <img src="{{ productLogUrl | url }}" class="h-7" />
+        {% endif %}
         <h4>Product Brief</h4>
-        <table class="text-sm bg-white">
+        <table class="text-sm bg-white w-96">
             <tbody>
                 <tr>
-                    <td>Phase</td>
+                    <td class-"w-40">Phase</td>
                     <td>{{ product.phase }}</td>
                 </tr>
                 <tr>
                     <td>Site</td>
-                    <td><a href="{{ product.link }}">Link</a></td>
+                    <td><a href="{{ links.homepage }}">Link</a></td>
                 </tr>
                 <tr>
                     <td>Business Func</td>
@@ -44,9 +46,26 @@ layout: archirepo/archirepo_base.njk
                     <td>Tech Lead</td>
                     <td>{{ product.techLead }}</td>
                 </tr>
+            </tobdy>
+        </table>
+        <h4>Links</h4>
+        <table class="text-sm bg-white w-96">
+            <tbody>
                 <tr>
-                    <td>Repo</td>
-                    <td><a href="{{ product.repos[0] }}">Link</a></td>
+                    <td class="w-40">Repo</td>
+                    <td><a href="{{ links.repo }}">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Env (Stage)</td>
+                    <td>{% if links.envs.stage %}<a href="{{ links.envs.stage }}">Link</a>{% endif %}</td>
+                </tr>
+                <tr>
+                    <td>Log Browser</td>
+                    <td>{% if links.logBrowser %}<a href="{{ links.logBrowser }}">Link</a>{% endif %}</td>
+                </tr>
+                <tr>
+                    <td>APM</td>
+                    <td>{% if links.observability.app %}<a href="{{ links.observability.app }}">Link</a>{% endif %}</td>
                 </tr>
             </tobdy>
         </table>
@@ -103,5 +122,5 @@ layout: archirepo/archirepo_base.njk
 <hr />
 <p class="content-center text-sm text-gray-600">{{ site[locale]._t.updated_on }}: {{ meta.update  | formatDate("DD", locale) }}, {{ site[locale]._t.by }}  {{ meta.author }}</p>
 {% if site.repoUrl %}
-<a class="text-sm" href="{{ site.repoUrl }}/edit/master/{{page.inputPath}}">{{ site[locale]._t.edit_on_git }}</a>
+<a class="text-sm" href="{{ site.repoUrl }}/edit/{{ site.repoDefaultBranch }}/{{page.inputPath}}">{{ site[locale]._t.edit_on_git }}</a>
 {% endif %}

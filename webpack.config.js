@@ -18,23 +18,34 @@ module.exports = {
       // "process.env": JSON.stringify(dotenv.parsed)
       "process.env": JSON.stringify(process.env)
     }),
-    new VueLoaderPlugin()
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+    }),
+    // new VueLoaderPlugin()
   ],
   resolve: {
+    extensions: ['*', '.js', '.jsx'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
     }
   },
   module: {
-    rules: [{
+    rules: [
+      {
       test: /\.css$/,
-      exclude: /node_modules/,
+      // exclude: /node_modules/,
       use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
-    },
-    {
-      test: /\.vue$/,
-      loader: "vue-loader",
-    },
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      },
+      {
+        test: /\.vue$/,
+        exclude: /node_modules/,
+        loader: "vue-loader",
+      },
     ]
   }
 };

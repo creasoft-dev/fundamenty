@@ -35,7 +35,7 @@ layout: layout/base.njk
 
 <br /><hr />
 
-<a href="{{ site.repoUrl }}/edit/master/src{{page.filePathStem}}.json">{{ site[locale]._t.edit_on_git }} the manifest file.</a>
+<a href="{{ site.repoUrl }}/edit/{{ site.repoDefaultBranch }}/src{{page.filePathStem}}.json">{{ site[locale]._t.edit_on_git }} the manifest file.</a>
 
 <blockquote class="text-sm"> NOTE: In order for the change in the spec source or the manifest above to be reflected,
 you need to process it manually:

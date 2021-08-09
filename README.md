@@ -19,7 +19,10 @@ Features included in this starter
 - [GitHub Actions](https://docs.github.com/en/actions) script to deploy on GitHub Pages
 - [GitLab-CI](https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/) script to deploy on GitLab Pages
 
-*New*: Layout for [Technology Radar](https://www.thoughtworks.com/radar). For more detail see [./src/_includes/radar/](./src/_includes/radar/)
+Layouts (themes)
+-  [Technology Radar](https://www.thoughtworks.com/radar). For more detail see [./src/_includes/radar/](./src/_includes/radar/)
+- **(NEW)** Product Catalog
+- **(NEW)** API Browser
 
 The project uses
 - [TailwindCSS](https://tailwindcss.com/)
@@ -104,9 +107,11 @@ The site content is under `./src`.
 ├───{lang}       - Contents in given locale
 │   ├ {lang}.json    - Common front matter for all the contents in Spanish
 │   ├───pages    - Site pages
-│   └───posts    - Site posts (e.g. blog articles)
+│   ├───posts    - Site posts (e.g. blog articles)
+│   ├───products - Product catalog
+│   └───radar    - (Technology) Radar
 ├───images       - Images
-├───scripts      -
+├───scripts      
 │   ├ main.js    - Main JS file webapack uses to build the asset bundle.
 │   └ algolia.js - Site posts (blog articles)
 ├───styles       - Tailwind's CSS styling
@@ -114,7 +119,10 @@ The site content is under `./src`.
 │   ├ site.js    - Main site configuration data.
 │   ├───l10n     - localization resource bundles
 └───_includes    - Eleventy's inclusion files, as specified in the front matter
-    └───layouts  - Layouts
+    ├ apibrowser - API spec (Swagger) browser
+    ├ archirepo  - Product Catalog layout (Architecture Repository)
+    ├ layout     - Default layouts
+    └─radar      - Technology Radar layout
 ```
 
 ## Creating a Content

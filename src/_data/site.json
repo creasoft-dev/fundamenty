@@ -1,5 +1,6 @@
 {
     "repoUrl": "https://github.com/creasoft-dev/fundamenty",
+    "repoDefaultBranch": "main",
     "rootUrl": "https://fundamenty.netlify.app",
 
     "name": "Fundamenty",
