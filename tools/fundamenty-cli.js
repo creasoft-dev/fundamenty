@@ -1,3 +1,8 @@
+/**
+ * CLI to execute tasks related to site management, e.g. generation of skeleton files
+ * and pushing content to search index.
+ * The actual scripts that the CLI tool uses are under `./scripts`
+ */
 require('dotenv').config();
 const path = require('path');
 const chalk = require('chalk');

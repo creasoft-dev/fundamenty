@@ -3,7 +3,7 @@ import '../styles/radar.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Search from './Search';
-import ArchiSearch from './ArchiSearch';
+import ProductSearch from './ProductSearch';
 import ApiDocSwagger from './ApiDocSwagger';
 
 
@@ -17,8 +17,8 @@ const searchContainer = document.querySelector('#search-container');
 ENABLE && (searchContainer) && ReactDOM.render(<Search/>, searchContainer);
 
 // Instantiate Product component
-const archisearchContainer = document.querySelector('#archisearch-container');
-ENABLE && (archisearchContainer) && ReactDOM.render(<ArchiSearch/>, archisearchContainer);
+const prodSearchContainer = document.querySelector('#productsearch-container');
+ENABLE && (prodSearchContainer) && ReactDOM.render(<ProductSearch />, prodSearchContainer);
 
 // Instantiate API Swagger component
 const apiswaggerContainer = document.querySelector('#apiswagger-container');
