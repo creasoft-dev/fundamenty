@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/posts/2020-07-10-first-post/</loc>
+        <lastmod>2020-07-10T00:00:00.000Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/es/posts/2020/2020-07-10-primer-articulo/</loc>
+        <lastmod>2020-07-10T00:00:00.000Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/radar/techniques/domain-driven-design/</loc>
+        <lastmod>2020-07-25T00:00:00.000Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/radar/tools/typescript/</loc>
+        <lastmod>2020-07-25T00:00:00.000Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/pages/about/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/pages/articles/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/pages/search/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/products/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/products/repo/myproduct/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/radar/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/radar/techniques/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/en/radar/tools/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/es/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/es/pages/acerca/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/es/pages/articulos/</loc>
+        <lastmod>2021-08-10T04:58:40.591Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+    <url>
+        <loc>https://creasoft-dev.github.io//fundamenty/</loc>
+        <lastmod>2021-08-10T04:58:40.599Z</lastmod>
+        <changefreq></changefreq>
+    </url>
+
+</urlset>

@@ -1,0 +1,15 @@
+[
+  
+    {
+      "title": "Fundamenty",
+      "lang": "en",
+      "tags": "product",
+      "product": {"name":"Fundamenty Product","stream":"SSG","phase":"production","initialReleaseDate":2020,"businessUnit":"Consulting","businessFunction":"Branding","teamLead":"Young-Suk Ahn Park","techLead":"Young-Suk Ahn Park","stakeholders":"People","channels":[]},
+      "technical": {"architecturalDrivers":["User Experience"],"cloudProvider":"Netlify","containerOrchestrator":"N/A","progLanguages":["JavaScript"],"techStack":[],"archiStyles":[],"backingServices":["ElasticSearch","Algolia"],"sharedServices":[],"ci":"GitHub Actions","cd":"GitHub Actions","security":[],"observability":[],"integrations":{"upstream":[],"downstream":[],"vendor":[]},"keyMetrics":{"deploymentFreq":null,"leadTime":null,"timeToRestore":null,"changeFailRate":null}},
+      "meta": {"update":"2021-08-10T00:00:00.000Z","description":"Eleventy Static Site Generator Starter","logo":"fundamenty-logo.png","keywords":["Eleventy","SSG"],"author":"Young-Suk Ahn Park","sourceDoc":null},
+      "url": "/en/products/repo/myproduct/",
+      "objectID": "/en/products/repo/myproduct/",
+      "content": "&quot;[TBD: Actual Content]\nSynopsis\n[Short highlight of the product]\nBusiness Context\n[Short Description of the product and the business it serves]\nArchitecture\nArchitectural Drivers\n[A list of architecture drivers that will guide the architecture]\nArchitecture As-Is\n[The state of the architecture, explained in prose, complemented with diagrams whenever possible]\nTechnical Specifications\n\nLanguage:\nFramework:\nPackage manager:\nBuild tool:\nPlatform (for build):\nCI/CD:\nCloud:\nDependent Libraries:\n\nOperational\n[Operational aspects of the system, e.g. pipeline, obsevability, etc.]\nArchitecture Drill-Down &amp;amp; Analysis\n[Analysis of how the architecture supports or demotes the architectural drivers]\nAddressing the Quality Attributes\n[How each of the architecture areas addresses the drivers]\nArchitectural Risks and Concerns\n[Any risks or concerns from the analysis]\nOpportunities for Improvement\n[Suggestions addressing each of the concerns]\nConclusion\n[Conclusion]\nReferences\n[Related links]\n&quot;"
+    }
+  
+]

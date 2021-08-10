@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting according to language</title>
+</head>
+<body>
+  <!-- Redirecting to according to browser language -->
+  <script>
+var availableLanguages = ["en","es"];
+
+// source from https://gist.github.com/leipert/9586b796281faa5e27ed
+var locale =
+  [
+    ...(window.navigator.languages || []),
+    window.navigator.language,
+    window.navigator.browserLanguage,
+    window.navigator.userLanguage,
+    window.navigator.systemLanguage
+  ]
+    .filter(Boolean)
+    .map(language => language.substr(0, 2))
+    .find(language => availableLanguages.includes(language)) || "en";
+
+let redirUrl = "/fundamenty/" + locale + "/";
+console.log("Redirecting to :" + redirUrl);
+window.location.replace(redirUrl);
+</script>
+
+</body>
+</html>

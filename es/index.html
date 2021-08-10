@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+  <head profile="http://www.w3.org/2005/10/profile">
+    
+    <title>Inicio - Fundamenty</title>
+    <meta name="description" content="Fundamenty, Proyecto plantilla de Eleventy.">
+    <meta name="keywords" content="eleventy,ssg,sitios web,plantilla">
+    <link rel="icon" type="image/png" href="/fundamenty/images/logo.ico">
+    <link rel="stylesheet" type="text/css" href="/fundamenty/assets/main.css"/>
+    <link href="https://unpkg.com/prismjs@1.21.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <style>
+		.hero {
+      background: url(https://cdn.pixabay.com/photo/2016/10/11/21/43/geometric-1732847_1280.jpg) no-repeat center center;
+      background-size: cover;
+		}
+	  </style>
+  </head>
+  <body>
+    <nav id="header" class=" fixed w-full z-10 top-0 bg-gray-100 shadow-md bg-opacity-0 text-white ">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4  ">
+        <div class="pl-4 flex items-center">
+          <image src="/fundamenty/images/logo.png" alt="Logo" class="h-5 mr-1"/>
+          <a  href="/fundamenty/ " class="no-underline hover:no-underline font-extrabold text-xl" >
+            Fundamenty
+          </a>
+        </div>
+        <div class="block md:hidden pr-4">
+          <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-purple-500 appearance-none focus:outline-none">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="w-full flex-grow md:flex  md:content-center md:items-center md:w-auto hidden md:block mt-2 md:mt-0 z-20" id="nav-content">
+          <div class="flex-1 w-full mx-auto max-w-sm content-center py-4 md:py-0">
+          
+          </div>
+          <ul class="list-reset md:flex justify-end items-center list-none text-sm">
+            
+              <li class="mr-3 py-2 md:py-0" title="">
+                <a href="/fundamenty/es/pages/acerca" class="inline-block py-2 px-2 font-bold no-underline hover:underline hover:bg-indigo-800 bg:rounded-md hover:text-white  uppercase">
+                  <i class=" fill-current "></i>A Cerca</a>
+              </li>
+            
+              <li class="mr-3 py-2 md:py-0" title="">
+                <a href="/fundamenty/es/pages/articulos" class="inline-block py-2 px-2 font-bold no-underline hover:underline hover:bg-indigo-800 bg:rounded-md hover:text-white  uppercase">
+                  <i class=" fill-current "></i>Artículos</a>
+              </li>
+            
+              <li class="mr-3 py-2 md:py-0" title="">
+                <a href="https://github.com/creasoft-dev/fundamenty" class="inline-block py-2 px-2 font-bold no-underline hover:underline hover:bg-indigo-800 bg:rounded-md hover:text-white  uppercase">
+                  <i class="fab fa-git fill-current "></i></a>
+              </li>
+            
+              <li class="mr-3 py-2 md:py-0" title="">
+                <a href="https://twitter.com/creasoftdev" class="inline-block py-2 px-2 font-bold no-underline hover:underline hover:bg-indigo-800 bg:rounded-md hover:text-white  uppercase">
+                  <i class="fab fa-twitter fill-current "></i></a>
+              </li>
+            
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="w-full flex mx-auto hero">
+      <div id="hero" class="mt-24 container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div id="hero-lable" class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+          <span class="text-5xl text-white">Inicio<span>
+        </div>
+        <div id="hero-visual" class="w-full md:w-3/5 py-6 text-center">
+          <span class="text-lg text-white">
+            <img class="w-2 md:w-4/5 z-50" src="/images/logo.png">
+          <span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 ">
+      <div class="content w-full text-gray-700  p-2">
+        <div
+    style="background-image:
+           url('/fundamenty/images/background.jpg');
+    height:200px;
+    background-size: 100%;
+    background-position:center;">&nbsp;</div>
+<h1>Construya su propio sitio web</h1>
+<p>¿Que espera para divulgar su conocimiento? ¡El mundo le espera!</p>
+<h2>Fundamenty, el projecto fundamental para creara sitio JAMStack</h2>
+<p>Simplemente clonee el <a href="https://github.com/creasoft-dev/fundamenty">repositorio</a>, y ejecute
+<code>yarn serve</code></p>
+<h3>El proyecto trae incluido lo siguiente para, su conveniencia:</h3>
+<ul>
+<li>Soporte de multilenguas.</li>
+<li>Integración con motor de búsqueda <a href="https://www.algolia.com/">Algolia</a> (autocomplete).</li>
+<li><a href="https://analytics.google.com/">Google Analytics</a>.</li>
+<li>Funcionalidad de editar en GitLab/GitHub.</li>
+<li>Generación de los archivos <code>robots.txt</code> y <code>sitemap.xml</code> para SEO.</li>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions</a> script para instalar en GitHub Pages.</li>
+<li><a href="https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/">GitLab-CI</a> script para instalar on GitLab Pages</li>
+</ul>
+<h3>El projecto utiliza:</h3>
+<ul>
+<li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+<li><a href="https://webpack.js.org/">Webpack</a></li>
+<li><a href="https://github.com/postcss/postcss-loader">postcss-loader</a></li>
+<li><a href="https://github.com/motdotla/dotenv">dotenv</a></li>
+</ul>
+
+      </div>
+
+      <div class="content w-full text-gray-700 bg-gray-100 shadow-md rounded-md p-2">
+      <a href="/fundamenty/en/pages/articles"><h2 class="leading-normal break-words" >Articulos</h2></a>
+      
+        <article >
+          <div>
+            <a href="/fundamenty/es/posts/2020/2020-07-10-primer-articulo/">Mi primer artículo</a>
+          </div>
+          10 jul 2020
+        </article>
+      
+      </div>
+
+
+      
+      <div class="content w-full">
+        <div id="disqus_thread"></div>
+      </div>
+      
+    </div>
+
+    <footer class="w-full bg-gray-100 mt-6 p-2 border-t-1 border-gray-300">
+  <div <div class="w-full container mx-auto flex flex-col items-center justify-center text-sm text-gray-600">
+    <div class="block">
+      Fundamenty.
+    </div>
+    <div >
+      Site generated on 10 ago 2021. Site generator based on <a href="https://github.com/creasoft-dev/fundamenty">Fundamenty</a> by <a href="https://creasoft.dev/">CreaSoft.dev</a>.
+      Powered by <a href="https://www.11ty.dev/" >Eleventy</a>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="/fundamenty/assets/main.js"></script>
+
+    <script>
+
+      /* https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8 */
+      /* Toggle dropdown list */
+
+      var navMenuDiv = document.getElementById("nav-content");
+      var navMenu = document.getElementById("nav-toggle");
+
+      var helpMenuDiv = document.getElementById("menu-content");
+      var helpMenu = document.getElementById("menu-toggle");
+
+      document.onclick = check;
+
+      function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, navMenu)) {
+            // click on the link
+            if (navMenuDiv.classList.contains("hidden")) {
+              navMenuDiv
+                .classList
+                .remove("hidden");
+            } else {
+              navMenuDiv
+                .classList
+                .add("hidden");
+            }
+          } else {
+            // click both outside link and outside menu, hide menu
+            navMenuDiv
+              .classList
+              .add("hidden");
+          }
+        }
+
+        //Help Menu
+        if (!checkParent(target, helpMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, helpMenu)) {
+            // click on the link
+            if (helpMenuDiv.classList.contains("hidden")) {
+              helpMenuDiv
+                .classList
+                .remove("hidden");
+            } else {
+              helpMenuDiv
+                .classList
+                .add("hidden");
+            }
+          } else {
+            // click both outside link and outside menu, hide menu
+            helpMenuDiv
+              .classList
+              .add("hidden");
+          }
+        }
+
+      }
+
+      function checkParent(t, elm) {
+        while (t.parentNode) {
+          if (t == elm) {
+            return true;
+          }
+          t = t.parentNode;
+        }
+        return false;
+      }
+
+// https://github.com/tailwindtoolbox/Landing-Page/blob/master/index.html
+
+  var header = document.getElementById("header");
+
+  document.addEventListener('scroll', function() {
+    /*Apply classes for slide in bar*/
+	  scrollpos = window.scrollY;
+
+    if(scrollpos > 10){
+	    header.classList.remove("bg-opacity-0");
+      header.classList.remove("text-white");
+    }
+    else {
+      // Transparent
+      header.classList.add("bg-opacity-0");
+      header.classList.add("text-white");
+    }
+  });
+
+
+
+    </script>
+  </body>
+</html>

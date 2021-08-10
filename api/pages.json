@@ -1,0 +1,48 @@
+[
+  
+    {
+      "title": "About",
+      "lang": "en",
+      "tags": "page",
+      "url": "/en/pages/about/",
+      "objectID": "/en/pages/about/",
+      "content": "&quot;Fundamenty, fun way of building sites!\nCreating a website is FUN, easy, secure and free!\nOnly few steps to have your own hompage\n\nClone the starter\n\nRename your project\nAdd contents in ./src/{lang}/pages and ./src/{lang}/posts\nAdd WEB_PATH_PREFIX in GitLab/GitHub&#39;s CI variables.\nPush it to your own GitLab/GitHub repo\n\nGitLab/GitHub CI will do its magic, and in few minutes you will see your page!\n&quot;"
+    },
+  
+    {
+      "title": "Articles",
+      "lang": "en",
+      "tags": "page",
+      "url": "/en/pages/articles/",
+      "objectID": "/en/pages/articles/",
+      "content": "&quot;&quot;"
+    },
+  
+    {
+      "title": "Search",
+      "lang": "en",
+      "tags": "page",
+      "url": "/en/pages/search/",
+      "objectID": "/en/pages/search/",
+      "content": "&quot;\n  \n\n&quot;"
+    },
+  
+    {
+      "title": "A Cerca",
+      "lang": "es",
+      "tags": "page",
+      "url": "/es/pages/acerca/",
+      "objectID": "/es/pages/acerca/",
+      "content": "&quot;Compartamos conocimientos!\n&quot;"
+    },
+  
+    {
+      "title": "Artículos",
+      "lang": "es",
+      "tags": "page",
+      "url": "/es/pages/articulos/",
+      "objectID": "/es/pages/articulos/",
+      "content": "&quot;&quot;"
+    }
+  
+]

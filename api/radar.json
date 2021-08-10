@@ -1,0 +1,35 @@
+[
+  
+    {
+      "title": "Domain Driven Design",
+      "lang": "en",
+      "date": "2020-07-25T00:00:00.000+00:00",
+      "tags": "radar",
+      "url": "/en/radar/techniques/domain-driven-design/",
+      "keywords": "architecture,design",
+      "objectID": "/en/radar/techniques/domain-driven-design/",
+      "radar_id": "radar",
+      "radar_category": "techniques",
+      "radar_ring": "adopt",
+      "content": "&quot;2020-07-25 Adopt\nKeep you software artifacts in sync with domain.\n&quot;",
+      "homepage": "",
+      "repo": ""
+    },
+  
+    {
+      "title": "TypeScript",
+      "lang": "en",
+      "date": "2020-07-25T00:00:00.000+00:00",
+      "tags": "radar",
+      "url": "/en/radar/tools/typescript/",
+      "keywords": "language",
+      "objectID": "/en/radar/tools/typescript/",
+      "radar_id": "radar",
+      "radar_category": "tools",
+      "radar_ring": "adopt",
+      "content": "&quot;2020-07-25 Adopt\nType checking at comiple time!\n&quot;",
+      "homepage": "https://www.typescriptlang.org/",
+      "repo": "https://github.com/microsoft/TypeScript"
+    }
+  
+]
