@@ -1,4 +1,3 @@
-// TODO: Test
 const utils = require('../../utils');
 
 const SCRIPT_NAME = 'locale/create'
@@ -46,7 +45,7 @@ const run = async (config, context) => {
 
     const params = utils.parseArgs(META, context.args);
 
-    utils.logger.info(verbose(`Executing ${SCRIPT_NAME} (%j)`), params);
+    utils.logger.info(`Executing ${META.name} (%j)`, params);
 
     const inputPath = utils.getInputPath(config);
 
