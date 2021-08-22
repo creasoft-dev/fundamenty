@@ -104,25 +104,25 @@ post collections per each locale, which can be accessed by the name:
 ### Site Content Directory Structure
 The site content is under `./src`.
 ```
-├───{lang}       - Contents in given locale
-│   ├ {lang}.json    - Common front matter for all the contents in Spanish
-│   ├───pages    - Site pages
-│   ├───posts    - Site posts (e.g. blog articles)
-│   ├───products - Product catalog
-│   └───radar    - (Technology) Radar
-├───images       - Images
+├───{lang}        - Contents in given locale
+│   ├ {lang}.json - Common front matter for all the contents in Spanish
+│   ├── pages     - Site pages
+│   ├── posts     - Site posts (e.g. blog articles)
+│   ├── products  - Product catalog
+│   └── radar     - (Technology) Radar
+├───images        - Images
 ├───scripts      
-│   ├ main.js    - Main JS file webapack uses to build the asset bundle.
-│   └ algolia.js - Site posts (blog articles)
-├───styles       - Tailwind's CSS styling
-├───_data        - Data/configuration file.
-│   ├ site.js    - Main site configuration data.
-│   ├───l10n     - localization resource bundles
-└───_includes    - Eleventy's inclusion files, as specified in the front matter
-    ├ apibrowser - API spec (Swagger) browser
-    ├ archirepo  - Product Catalog layout (Architecture Repository)
-    ├ layout     - Default layouts
-    └─radar      - Technology Radar layout
+│   ├─ main.js    - Main JS file webapack uses to build the asset bundle.
+│   └─ algolia.js - Site posts (blog articles)
+├───styles        - Tailwind's CSS styling
+├───_data         - Data/configuration file.
+│   ├─ site.js    - Main site configuration data.
+│   ├──l10n       - localization resource bundles
+└───_includes     - Eleventy's inclusion files, as specified in the front matter
+    ├─ apibrowser - API spec (Swagger) browser
+    ├─ products   - Product Catalog layout (Architecture Repository)
+    ├─ layout     - Default layouts
+    └─radar       - Technology Radar layout
 ```
 
 ## Creating a Content
@@ -146,7 +146,8 @@ Especially the [documentation on page data](https://www.11ty.dev/docs/data-eleve
 
 ## Future Enhancements to this Project
 - Improve the `tools/fundamenty-cli.js` to add/remove language packs.
-- Add `markdown` classname to markdown generated tags
+- Add `markdown` classname to markdown generated tags.
+- Add integration with [self-hosted open source commenting](https://lisakov.com/projects/open-source-comments/). 
 
 
 ## Credits

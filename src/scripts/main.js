@@ -22,4 +22,4 @@ ENABLE && (prodSearchContainer) && ReactDOM.render(<ProductSearch />, prodSearch
 
 // Instantiate API Swagger component
 const apiswaggerContainer = document.querySelector('#apiswagger-container');
-ENABLE && (apiswaggerContainer) && ReactDOM.render(<ApiDocSwagger/>, apiswaggerContainer);
+(apiswaggerContainer) && ReactDOM.render(<ApiDocSwagger/>, apiswaggerContainer);

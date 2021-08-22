@@ -1,6 +1,6 @@
 ---
 title: Product Catalog
-layout: archirepo/archirepo_portal.njk
+layout: products/products_portal.njk
 
 pagination:
   data: collections.product

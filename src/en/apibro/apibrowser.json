@@ -1,0 +1,13 @@
+{
+  "description": "API list",
+  "note": "Trying to access GitLab raw file will err as it does not return 'Access-Control-Allow-Origin *'",
+  "apis": {
+    "am:title_manager": {
+      "domain": "Library",
+      "name": "Book Manager (WIP)",
+      "description": "Title Management API",
+      "specSource": "gitlab", 
+      "specUrl": "https://gitlab.com/mygroup/myapiproject/-/blob/master/public/oapi-specs/title-manager.yml"
+    }
+  }
+}

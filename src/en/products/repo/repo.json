@@ -1,4 +1,4 @@
 {
-    "layout": "archirepo/archirepo_item.njk",
+    "layout": "products/products_item.njk",
     "tags": ["product"]
 }
