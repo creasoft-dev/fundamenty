@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 const _ = require('lodash');
+const yaml = require("js-yaml");
 const chalk = require('chalk');
 const commander = require('commander');
 const nunjucks = require('nunjucks');
@@ -28,6 +29,9 @@ class Logger {
     error(message, ...args) {
         (this.level <= 3) &&
             console.error(chalk.redBright(message), ...args)
+    }
+    message(message, ...args) {
+        console.log(chalk.magenta(message), ...args)
     }
 }
 
@@ -87,14 +91,35 @@ function readJson(path) {
     return JSON.parse(rawdata);
 }
 
+
+/**
+ * Reads a yaml file and parses it
+ * @param {string} path
+ * @returns {object} parsed yaml
+ */
+ function readYaml(path) {
+    const rawdata = fs.readFileSync(path).toString();
+    return yaml.load(rawdata, "utf8");
+}
+
+
 /**
  * Joins two paths.
- * Wrapper of path.join
+ * Wrapper around path.join
  * @param  {...string} paths
  */
 function pathJoin(...paths){
     return path.join(...paths);
 };
+
+/**
+ * Check if path exists.
+ * Wrapper around fs.existsSync()
+ * @param  {string} path
+ */
+function existsSync(path){
+    return fs.existsSync(path);
+}
 
 /**
  * 
@@ -109,6 +134,18 @@ function mkdirSync(path, options, ignoreIfExists = true) {
     return fs.mkdirSync(path, options);
 }
 
+/**
+ * 
+ * @param {string} path 
+ * @param {object} options - { recursive: (true/false) }
+ * @param {boolean} ignoreIfNotFound  - default true
+ */
+function rmSync(path, options, ignoreIfNotFound = true) {
+    if (ignoreIfNotFound && !fs.existsSync(path)) {
+        return undefined;
+    }
+    return fs.rmdirSync(path, options);
+}
 
 /**
  * 
@@ -184,10 +221,12 @@ function parseArgs(scriptMeta, args) {
         }
     }
 
-
     const program = new commander.Command(scriptMeta.name)
-        .arguments(scriptMeta.command.arguments);
-    const argsKeys = extractKeys(scriptMeta.command.arguments);
+    
+    // TESTING
+    scriptMeta.command.arguments && program.arguments(scriptMeta.command.arguments);
+    
+    const argsKeys = scriptMeta.command.arguments ? extractKeys(scriptMeta.command.arguments) : [];
 
     parseOptions(program, scriptMeta.command.requiredOptions);
     parseOptions(program, scriptMeta.command.options);
@@ -239,32 +278,30 @@ function renderAndSaveFromTemplate(templatePath, model, destPath) {
  * @param {string} rootPath
  * @param {string} templateDir
  * @param {string} templateName
- * @param {object} params
+ * @param {object} params {filename, lang, title}
  * @param {object} model
  * @param {string} destSubDir
  * @param {object} opts
  */
 function generateFileFromTemplate(rootPath, templateDir, templateName, params, model, destSubDir, opts) {
-    // const rootPath = utils.getInputPath(config);
-
-    // destSubDir = '/archi/repo'
-    const destDirPath = pathJoin(rootPath, params.lang, destSubDir);
+    // destSubDir (under language) example: '/archi/repo'
+    const destDirPath = pathJoin(rootPath, params.lang || '', destSubDir);
 
     if (!fs.existsSync(destDirPath)) {
         logAndThrow(`Error: directory [${destDirPath}] does not exist.`)
     }
 
     const todayIso = (new Date()).toISOString().substring(0,10);
-    let filename = toSnakeCase(params.title, '-') + '.md';
+    let filename = params.filename || toSnakeCase(params.title, '-') + '.md';
     if (_.get(opts, 'prependDate', false)) {
         filename = todayIso + '-' + filename;
     }
 
-    // templateName = '$archi-item.md.njk'
+    // templateName example: '$archi-item.md.njk'
     const templatePath = pathJoin(templateDir, templateName);
 
     const destPath = pathJoin(destDirPath, filename);
-    if (fs.existsSync(destPath)) {
+    if (!params.overwrite && fs.existsSync(destPath)) {
         logAndThrow(`Error: File [${destPath}] already exists`);
     }
 
@@ -283,8 +320,11 @@ module.exports = {
     logAndThrow,
     flattenObject,
     mkdirSync,
+    rmSync,
     readJson,
+    readYaml,
     pathJoin,
+    existsSync,
     toSnakeCase,
     getInputPath,
     getOutputPath,

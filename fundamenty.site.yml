@@ -9,6 +9,8 @@ langs:
     name: English
   - id: es
     name: Español
+  - id: ko
+    name: 한국어
 
 WEB_ROOT_URL: http://localhost
 ALGOLIA_APP_ID:

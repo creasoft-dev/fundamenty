@@ -1,5 +1,6 @@
 {
     "repoUrl": "{{ repoUrl }}",
+    "repoDefaultBranch": "main",
     "rootUrl": "{{ rootUrl }}",
 
     "name": "{{ name }}",
@@ -8,11 +9,9 @@
     "googleTagId": "", 
 
     "defaultLang": "{{ defaultLang }}",
-    "langs": [{% for lang in langs %}
-        { 
+    "langs": [{% for lang in langs %}{ 
             "id": "{{ lang.id }}",
             "name": "{{ lang.name }}"
-        }{{ '' if loop.last else ',' }}
-    {% endfor %}]
+        }{{ '' if loop.last else ',' }}{% endfor %}]
 
 }
