@@ -1,0 +1,25 @@
+# Once you complete modifying this file, run
+# $ yarn fundamenty:tool init
+name: Fundamenty2
+repoUrl: https://github.com/creasoft-dev/fundamenty
+rootUrl: https://fundamenty.netlify.app
+defaultLang: en
+langs:
+  - id: en
+    name: English
+  - id: es
+    name: Español
+  - id: ko
+    name: 한국어
+
+WEB_ROOT_URL: http://localhost
+ALGOLIA_APP_ID:
+ALGOLIA_INDEX_NAME:
+ALGOLIA_SEARCH_API_KEY:
+ALGOLIA_ADMIN_API_KEY:
+GOOGLE_TAG_ID:
+DISQUS_SITE_NAME:
+
+ES_INDEX_NAME:
+ES_SEARCH_API_KEY:
+ES_ADMIN_API_KEY:
