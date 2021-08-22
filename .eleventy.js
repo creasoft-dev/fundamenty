@@ -5,6 +5,8 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const site = require('./src/_data/site.json');
 
+const localizedCollections = ['post'];
+
 module.exports = eleventyConfig => {
     eleventyConfig.addPlugin(syntaxHighlight);
 
@@ -19,7 +21,6 @@ module.exports = eleventyConfig => {
     })
 
     // For each language, create collection of posts with given language
-    const localizedCollections = ['post'];
     site.langs.map(langEntry => {
 
         for (const localizedCollection of localizedCollections) {

@@ -1,5 +1,11 @@
 # Fundamenty Changelog
 
+## 0.1.1
+
+* Add site locale script in cli tool to generate local directory 
+* Add site init script in cli tool to initialize site (remove .git, generate .env, site.json) 
+
+
 ## 0.1.0
 
 * Added API Browser and Search capability

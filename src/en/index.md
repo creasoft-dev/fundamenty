@@ -36,8 +36,10 @@ Just clone the [repo](https://github.com/creasoft-dev/fundamenty), and run
 - Generation of `robots.txt` and `sitemap.xml` files for SEO
 - Auto deploy in Github using [GitHub Actions](https://docs.github.com/en/actions) script to deploy on GitHub Pages
 - Auto deploy in GitLab using GitLab-CI
+- CLI tool to initialize site and generate skeleton content file
 
 *New*: Layout for [Technology Radar](https://www.thoughtworks.com/radar). For more detail see [/en/radar/]({{ '/en/radar/' | url }})
+
 
 ### The project uses
 - [TailwindCSS](https://tailwindcss.com/)

@@ -11,7 +11,7 @@ $ yarn fun-cli <script/path> [...args]
 ### Site related scripts
 ```sh
 # Initialize site: removes .git folder, creates lang folders and generates .env.gen, src/_data/site.json.gen files
-$ yarn fun-cli site/init
+$ yarn fun-cli site/init --deletegit
 # (WIP) Create a new locale (will create a folder and add Language name)
 $ yarn fun-cli site/locale en English
 

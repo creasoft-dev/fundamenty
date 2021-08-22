@@ -36,7 +36,8 @@ Simplemente clonee el [repositorio](https://github.com/creasoft-dev/fundamenty),
 - Funcionalidad de editar en GitLab/GitHub.
 - Generación de los archivos `robots.txt` y `sitemap.xml` para SEO.
 - [GitHub Actions](https://docs.github.com/en/actions) script para instalar en GitHub Pages.
-- [GitLab-CI](https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/) script para instalar on GitLab Pages
+- [GitLab-CI](https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/) script para instalar on GitLab Pages.
+- Herramienta CLI para inicializar sitio y generar archivo de contenidos.
 
 ### El projecto utiliza:
 - [TailwindCSS](https://tailwindcss.com/)
