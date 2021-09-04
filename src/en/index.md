@@ -38,7 +38,14 @@ Just clone the [repo](https://github.com/creasoft-dev/fundamenty), and run
 - Auto deploy in GitLab using GitLab-CI
 - CLI tool to initialize site and generate skeleton content file
 
-*New*: Layout for [Technology Radar](https://www.thoughtworks.com/radar). For more detail see [/en/radar/]({{ '/en/radar/' | url }})
+
+### Themes
+
+A theme is a collection of templates (under the `_includes` folder) that generates a specific type of content.  An example is the **Technology Radar**, which renders a page for the radar and a page for each of the blips.
+
+-  [Technology Radar](https://www.thoughtworks.com/radar). For more detail see [./src/_includes/radar/](./src/_includes/radar/). See live sample: [/en/radar/]({{ '/en/radar/' | url }})
+- **(NEW)** Product Catalog - Catalog of products, with search. See live sample: [/en/products/]({{ '/en/products/' | url }})
+- **(NEW)** API Browser - OpenAPI browser, based on Swagger UI. See live sample: [/en/apibro/]({{ '/en/apibro/' | url }})
 
 
 ### The project uses
@@ -46,7 +53,6 @@ Just clone the [repo](https://github.com/creasoft-dev/fundamenty), and run
 - [Webpack](https://webpack.js.org/)
 - [postcss-loader](https://github.com/postcss/postcss-loader)
 - [dotenv](https://github.com/motdotla/dotenv)
-
 
 
 ### Credits

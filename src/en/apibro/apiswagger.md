@@ -2,6 +2,6 @@
 title: API Documentation
 ---
 
-[Back to the directory](../apibrowser/)
+[Back to the directory](../)
 
 <div id="apiswagger-container" ></div>
