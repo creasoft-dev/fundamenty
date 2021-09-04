@@ -1,0 +1,173 @@
+openapi: 3.0.1
+info:
+  title: Title Manager
+  description: 'This is a Library''s TItle Manager (INT) server.'
+  contact:
+    email: test@test.com
+  version: 0.0.1
+externalDocs:
+  description: Find out more about Title Manager in Wiki
+  url: https://library.test.com/docs/title
+servers:
+- url: https://stg-library.test.com/api/titles
+tags:
+- name: titles
+  description: Access titles
+  externalDocs:
+    description: Find out more
+    url: https://confluence.
+- name: bulk
+  description: Bulk Access
+paths:
+  /titles/{id}:
+    put:
+      tags:
+      - titles
+      summary: Update an existing title by ID
+      operationId: updateTitle
+      parameters:
+        - name: id
+          in: path
+          description: Title's unique ID (Mongo ID).
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Title object that needs to be added to the db
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Title'
+        required: true
+      responses:
+        200:
+          description: Successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Title'
+        400:
+          description: Invalid body supplied
+          content: {}
+        404:
+          description: Title not found
+          content: {}
+      security:
+      - am_auth:
+        - write:titles
+        - read:titles
+      x-codegen-request-body-name: body
+    get:
+      tags:
+      - titles
+      summary: Finds Titles by status
+      description: Multiple status values can be provided with comma separated strings
+      operationId: findTitlesById
+      parameters:
+        - name: id
+          in: path
+          description: Title's unique ID (Mongo ID).
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Title'
+        400:
+          description: Invalid ID format supplied
+          content: {}
+        404:
+          description: Title not found
+          content: {}
+      security:
+      - am_auth:
+        - read:titles
+    delete:
+      tags:
+      - titles
+      summary: Deletes a title
+      operationId: deleteTitle
+      parameters:
+        - name: id
+          in: path
+          description: Title's unique ID (Mongo ID).
+          required: true
+          schema:
+            type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Title not found
+          content: {}
+      security:
+      - am_auth:
+        - write:titles
+        - read:titles
+  /titles/bulk:
+    get:
+      tags:
+      - bulk
+      summary: Bulk Create Titles
+      description: Create multiple titles in a single request.
+      operationId: createBulkTitles
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Title'
+        400:
+          description: Invalid title value
+          content: {}
+      deprecated: false
+      security:
+      - am_auth:
+        - write:titles
+        - read:titles  
+components:
+  schemas:
+    Title:
+      required:
+      - source
+      - name
+      type: object
+      properties:
+        source:
+          title: The source of the title
+          type: string
+        status:
+          type: string
+        name:
+          type: string
+        isbn:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        source_id:
+          type: string
+        id:
+          type: string
+  securitySchemes:
+    am_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://stg-library.test.com/oauth
+          scopes:
+            write:titles: modify titles in your account
+            read:titles: read your titles
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
