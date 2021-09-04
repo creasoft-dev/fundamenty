@@ -116,13 +116,6 @@ paths:
       summary: Bulk Create Titles
       description: Create multiple titles in a single request.
       operationId: createBulkTitles
-      requestBody:
-        content:
-          application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Title'
       responses:
         200:
           description: Successful operation
