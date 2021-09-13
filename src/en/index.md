@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: layout/page_with_posts.njk
+layout: layout/landing.njk
 
 pagination:
   data: collections.posts_en
@@ -8,6 +8,8 @@ pagination:
   reverse: true
   alias: posts
 
+slogan: "SSG with batteries included"
+hero_button_link: "/en"
 description: Fundamenty, Eleventy Starter kit with multilingual support and more.
 keywords: ["eleventy", "ssg", "JAMStack", "starter"]
 ---

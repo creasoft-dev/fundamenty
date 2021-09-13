@@ -19,7 +19,15 @@ module.exports = {
             '5xl': '4rem',
             '6xl': '5rem',
         },
-        extend: {},
+        extend: {
+            colors: {
+                primary: {
+                    light: '#00c9b6ff',
+                    DEFAULT: '#009688',
+                    dark: '#006d63',
+                }
+            }
+        },
     },
     variants: {},
     plugins: [],

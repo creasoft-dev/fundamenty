@@ -1,6 +1,6 @@
 ---
 title: Inicio
-layout: layout/landing.njk
+layout: layout/page_with_posts.njk
 
 pagination:
   data: collections.posts_es
@@ -8,16 +8,18 @@ pagination:
   reverse: true
   alias: posts
 
+slogan: "SSG con baterias incluidas"
+hero_button_link: "/es"
 description: Fundamenty, Proyecto plantilla de Eleventy.
 keywords: ["eleventy", "ssg", "sitios web", "plantilla"]
 ---
-
 <div
     style="background-image:
-           url('{{ "/images/background.jpg" | url}}');
+           url('{{ "/images/background.jpg"  | url}}');
     height:200px;
     background-size: 100%;
     background-position:center;">&nbsp;</div>
+
 
 # Construya su propio sitio web
 
