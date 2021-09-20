@@ -95,7 +95,7 @@
         </div>
         <div id="hero-visual" class="w-full md:w-2/5 py-6 text-center">
           <span class="text-lg text-white">
-            <img class="w-2 md:w-2/5 z-50" src="/images/logo.png">
+            <img class="w-2 md:w-2/5 z-50" src="/fundamenty/images/logo.png">
           <span>
         </div>
       </div>
@@ -176,7 +176,7 @@
       Fundamenty.
     </div>
     <div >
-      Site generated on Sep 13, 2021. Site generator based on <a href="https://github.com/creasoft-dev/fundamenty">Fundamenty</a> by <a href="https://creasoft.dev/">CreaSoft.dev</a>.
+      Site generated on Sep 20, 2021. Site generator based on <a href="https://github.com/creasoft-dev/fundamenty">Fundamenty</a> by <a href="https://creasoft.dev/">CreaSoft.dev</a>.
       Powered by <a href="https://www.11ty.dev/" >Eleventy</a>
     </div>
   </div>
@@ -260,7 +260,9 @@
 // https://github.com/tailwindtoolbox/Landing-Page/blob/master/index.html
 
   var header = document.getElementById("header");
-
+  header.classList.add("bg-opacity-0");
+  header.classList.add("text-white");
+  
   document.addEventListener('scroll', function() {
     /*Apply classes for slide in bar*/
 	  scrollpos = window.scrollY;
