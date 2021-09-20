@@ -42,7 +42,7 @@
         </div>
         <div id="hero-visual" class="w-full md:w-2/5 py-6 text-center">
           <span class="text-lg text-white">
-            <img class="w-2 md:w-2/5 z-50" src="/images/logo.png">
+            <img class="w-2 md:w-2/5 z-50" src="{{ "/images/logo.png" | url }}">
           <span>
         </div>
       </div>
@@ -152,7 +152,9 @@
 // https://github.com/tailwindtoolbox/Landing-Page/blob/master/index.html
 
   var header = document.getElementById("header");
-
+  header.classList.add("bg-opacity-0");
+  header.classList.add("text-white");
+  
   document.addEventListener('scroll', function() {
     /*Apply classes for slide in bar*/
 	  scrollpos = window.scrollY;
