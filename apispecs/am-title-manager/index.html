@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="">
+  <head profile="http://www.w3.org/2005/10/profile">
+    
+    <title>Title Manager v0.0.1 - Fundamenty</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" type="image/png" href="/fundamenty/images/logo.ico">
+    <link rel="stylesheet" type="text/css" href="/fundamenty/assets/main.css"/>
+    <link href="https://unpkg.com/prismjs@1.21.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav id="header" class=" fixed w-full z-10 top-0 bg-gray-100 shadow-md ">
+  <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4  ">
+    <div class="pl-4 flex items-center">
+      <image src="/fundamenty/images/logo.png" alt="Logo" class="h-5 mr-1"/>
+      <a  href="/fundamenty/ " class="no-underline hover:no-underline font-extrabold text-xl" >
+        Fundamenty
+      </a>
+    </div>
+    <div class="block md:hidden pr-4">
+      <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-purple-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="w-full flex-grow md:flex  md:content-center md:items-center md:w-auto hidden mt-2 md:mt-0 z-20" id="nav-content">
+      <div class="flex-1 w-full mx-auto max-w-sm content-center py-4 md:py-0">
+      
+      </div>
+      <ul class="list-reset md:flex justify-end items-center list-none text-sm">
+        
+      </ul>
+
+      
+      <ul class="list-reset lg:flex justify-end items-center list-none">
+        
+          <li class="bg-red mr-3 lg:py-0">
+            <a href="/fundamenty/en" class="inline-block text-xs no-underline">English</a>
+          </li>
+        
+          <li class="bg-red mr-3 lg:py-0">
+            <a href="/fundamenty/es" class="inline-block text-xs no-underline">Español</a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+    <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-16">
+      <div class="content w-full">
+        <h1>Title Manager v0.0.1</h1>
+<p class="content-center">: Invalid DateTime,   </p>
+
+
+
+
+
+
+<!-- Generator: Widdershins v4.0.1 -->
+<h1 id="title-manager">Title Manager v0.0.1</h1>
+<blockquote>
+<p>Scroll down for example requests and responses.</p>
+</blockquote>
+<p>This is a Library's TItle Manager (INT) server.</p>
+<p>Base URLs:</p>
+<ul>
+<li><a href="https://stg-library.test.com/api/titles">https://stg-library.test.com/api/titles</a></li>
+</ul>
+<p>Email: <a href="mailto:test@test.com">Support</a></p>
+<h1>Authentication</h1>
+<ul>
+<li>
+<p>oAuth2 authentication.</p>
+<ul>
+<li>Flow: implicit</li>
+<li>Authorization URL = <a href="https://stg-library.test.com/oauth">https://stg-library.test.com/oauth</a></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Scope Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>write:titles</td>
+<td>modify titles in your account</td>
+</tr>
+<tr>
+<td>read:titles</td>
+<td>read your titles</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>API Key (api_key)
+<ul>
+<li>Parameter Name: <strong>api_key</strong>, in: header.</li>
+</ul>
+</li>
+</ul>
+<h1 id="title-manager-titles">titles</h1>
+<p>Access titles</p>
+<p><a href="https://confluence.">Find out more</a></p>
+<h2>updateTitle</h2>
+<p><a id="opIdupdateTitle"></a></p>
+<p><code>PUT /titles/{id}</code></p>
+<p><em>Update an existing title by ID</em></p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"isbn"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"updated_at"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"source_id"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"string"</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="updatetitle-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Title's unique ID (Mongo ID).</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schematitle">Title</a></td>
+<td>true</td>
+<td>Title object that needs to be added to the db</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"isbn"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"updated_at"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"source_id"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"string"</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="updatetitle-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Successfully updated</td>
+<td><a href="#schematitle">Title</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid body supplied</td>
+<td>None</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Title not found</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h3 id="updatetitle-responseschema">Response Schema</h3>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+am_auth ( Scopes: write:titles read:titles )
+</aside>
+<h2>findTitlesById</h2>
+<p><a id="opIdfindTitlesById"></a></p>
+<p><code>GET /titles/{id}</code></p>
+<p><em>Finds Titles by status</em></p>
+<p>Multiple status values can be provided with comma separated strings</p>
+<h3 id="findtitlesbyid-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Title's unique ID (Mongo ID).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"isbn"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"updated_at"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"source_id"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"string"</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="findtitlesbyid-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Successfully updated</td>
+<td><a href="#schematitle">Title</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid ID format supplied</td>
+<td>None</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Title not found</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h3 id="findtitlesbyid-responseschema">Response Schema</h3>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+am_auth ( Scopes: read:titles )
+</aside>
+<h2>deleteTitle</h2>
+<p><a id="opIddeleteTitle"></a></p>
+<p><code>DELETE /titles/{id}</code></p>
+<p><em>Deletes a title</em></p>
+<h3 id="deletetitle-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Title's unique ID (Mongo ID).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<h3 id="deletetitle-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid ID supplied</td>
+<td>None</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Title not found</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h3 id="deletetitle-responseschema">Response Schema</h3>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+am_auth ( Scopes: write:titles read:titles )
+</aside>
+<h1 id="title-manager-bulk">bulk</h1>
+<p>Bulk Access</p>
+<h2>createBulkTitles</h2>
+<p><a id="opIdcreateBulkTitles"></a></p>
+<p><code>GET /titles/bulk</code></p>
+<p><em>Bulk Create Titles</em></p>
+<p>Create multiple titles in a single request.</p>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><br>  <span class="token punctuation">{</span><br>    <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>    <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>    <span class="token property">"isbn"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>    <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>    <span class="token property">"updated_at"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>    <span class="token property">"source_id"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"string"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">]</span></code></pre>
+<h3 id="createbulktitles-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Successful operation</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid title value</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h3 id="createbulktitles-responseschema">Response Schema</h3>
+<p>Status Code <strong>200</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>anonymous</em></td>
+<td>[<a href="#schematitle">Title</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» source</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» status</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» isbn</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» created_at</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» updated_at</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» source_id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+am_auth ( Scopes: write:titles read:titles )
+</aside>
+<h1>Schemas</h1>
+<h2 id="tocS_Title">Title</h2>
+<!-- backwards compatibility -->
+<a id="schematitle"></a>
+<a id="schema_Title"></a>
+<a id="tocStitle"></a>
+<a id="tocstitle"></a>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"isbn"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"updated_at"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"source_id"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"string"</span><br><span class="token punctuation">}</span><br></code></pre>
+<h3>Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>isbn</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>source_id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<hr />
+<p class="content-center">: Invalid DateTime,   </p>
+
+<a href="https://github.com/creasoft-dev/fundamenty/edit/main/./src/apispecs/am-title-manager.md"></a>
+
+
+      </div>
+      
+      <div class="content w-full">
+        <div id="disqus_thread"></div>
+      </div>
+      
+    </div>
+
+    <footer class="w-full bg-gray-100 mt-6 p-2 border-t-1 border-gray-300">
+  <div <div class="w-full container mx-auto flex flex-col items-center justify-center text-sm text-gray-600">
+    <div class="block">
+      Fundamenty.
+    </div>
+    <div >
+      Site generated on Nov 11, 2021. Site generator based on <a href="https://github.com/creasoft-dev/fundamenty">Fundamenty</a> by <a href="https://creasoft.dev/">CreaSoft.dev</a>.
+      Powered by <a href="https://www.11ty.dev/" >Eleventy</a>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="/fundamenty/assets/main.js"></script>
+
+    <script>
+
+      /* https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8 */
+      /* Toggle dropdown list */
+
+      var navMenuDiv = document.getElementById("nav-content");
+      var navMenu = document.getElementById("nav-toggle");
+
+      var helpMenuDiv = document.getElementById("menu-content");
+      var helpMenu = document.getElementById("menu-toggle");
+
+      document.onclick = check;
+
+      function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, navMenu)) {
+            // click on the link
+            if (navMenuDiv.classList.contains("hidden")) {
+              navMenuDiv
+                .classList
+                .remove("hidden");
+            } else {
+              navMenuDiv
+                .classList
+                .add("hidden");
+            }
+          } else {
+            // click both outside link and outside menu, hide menu
+            navMenuDiv
+              .classList
+              .add("hidden");
+          }
+        }
+
+        //Help Menu
+        if (!checkParent(target, helpMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, helpMenu)) {
+            // click on the link
+            if (helpMenuDiv.classList.contains("hidden")) {
+              helpMenuDiv
+                .classList
+                .remove("hidden");
+            } else {
+              helpMenuDiv
+                .classList
+                .add("hidden");
+            }
+          } else {
+            // click both outside link and outside menu, hide menu
+            helpMenuDiv
+              .classList
+              .add("hidden");
+          }
+        }
+
+      }
+
+      function checkParent(t, elm) {
+        while (t.parentNode) {
+          if (t == elm) {
+            return true;
+          }
+          t = t.parentNode;
+        }
+        return false;
+      }
+
+
+    </script>
+  </body>
+</html>
