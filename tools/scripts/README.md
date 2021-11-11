@@ -41,3 +41,8 @@ $ yarn fun-cli search/es index -f
 $ yarn fun-cli search/es init -n site-products
 $ yarn fun-cli search/es index -n site-products -i ./_site/api/products.json -f
 ```
+
+### API Browser related scripts
+```sh
+$ yarn fun-cli apibro/docu 
+```

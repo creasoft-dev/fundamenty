@@ -9,14 +9,17 @@
  * `index` action - indexes the content. The contents are read from ./_site/api.
  * 
  * The files in `./_site/api` are generated with `yarn build`
+ * The ReactiveSearch UI component cannot handle nested objects, hence flattening is needed.
  *
  * Env variables:
  * - ES_URL: the hostname (without https), REQUIRED
- * - ES_ADMIN_ACCESS_KEY=
- * - ES_ADMIN_ACCESS_SECRET=
- * - ES_READ_ACCESS_KEY=
- * - ES_READ_ACCESS_SECRET=
- * When adding to the pipeline, make sure to configure those envs.
+ * - ES_ADMIN_ACCESS_KEY: the admin access key
+ * - ES_ADMIN_ACCESS_SECRET: the admin access secret
+ * 
+ * The following two are used in the UI script 
+ * - ES_READ_ACCESS_KEY
+ * - ES_READ_ACCESS_SECRET
+* When adding to the pipeline, make sure to configure those envs.
  */
 const utils = require("../../utils");
 const { Client } = require("@elastic/elasticsearch");

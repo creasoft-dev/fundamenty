@@ -49,6 +49,8 @@ npm package manager, I recommend using [yarn](https://yarnpkg.com/).
 1. Clone the project
 ```sh
 $ git clone git@github.com:creasoft-dev/fundamenty.git <mysite>
+$ git config user.name "FIRST_NAME LAST_NAME"
+$ git config user.email "MY_NAME@example.com"
 ```
 You can also download.
 ```sh
