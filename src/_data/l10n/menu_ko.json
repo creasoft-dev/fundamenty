@@ -1,11 +1,11 @@
 {
     "top": [{
             "title": "소개",
-            "href": "/ko/pages/acerca"
+            "href": "/ko/pages/about/"
         },
         {
             "title": "기사",
-            "href": "/ko/pages/articulos"
+            "href": "/ko/pages/articles/"
         },
         {
             "icon": "fab fa-git",

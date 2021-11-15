@@ -99,6 +99,18 @@ You may provide the following environment variables for the deployment.
 > Note: The `WEB_PATH_PREFIX` variable is for the prefix path, which is required if your site lives in a different subdirectory. Needed for GitLab/GitHub Pages.
 > The rest of the variables are optional. If not provided, the feature will just be disabled.
 
+## Building and running as docker
+
+Build with the following command
+```sh
+$ docker build -t api-portal:0.2 .
+```
+
+Run with the following command
+```sh
+$ docker run -it --rm -d -p 8080:80 --name api-portal api-portal:0.2
+```
+
 
 ## Customizing the Site and Managing Content
 

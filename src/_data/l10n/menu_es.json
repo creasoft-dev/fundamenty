@@ -1,11 +1,11 @@
 {
     "top": [{
             "title": "A Cerca",
-            "href": "/es/pages/acerca"
+            "href": "/es/pages/acerca/"
         },
         {
             "title": "Artículos",
-            "href": "/es/pages/articulos"
+            "href": "/es/pages/articulos/"
         },
         {
             "icon": "fab fa-git",

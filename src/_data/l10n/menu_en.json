@@ -1,15 +1,15 @@
 {
     "top": [{
             "title": "About",
-            "href": "/en/pages/about"
+            "href": "/en/pages/about/"
         },
         {
             "title": "Products",
-            "href": "/en/products"
+            "href": "/en/products/"
         },
         {
             "title": "Articles",
-            "href": "/en/pages/articles"
+            "href": "/en/pages/articles/"
         },
         {
             "icon": "fab fa-git",
