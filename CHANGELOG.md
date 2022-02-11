@@ -1,5 +1,8 @@
 # Fundamenty Changelog
 
+## 0.x.x
+* Fix some html errors
+
 ## 0.1.1
 
 * Add site locale script in cli tool to generate local directory 

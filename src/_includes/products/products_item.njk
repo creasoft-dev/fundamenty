@@ -27,7 +27,7 @@ layout: products/products_base.njk
         <table class="text-sm bg-white w-96">
             <tbody>
                 <tr>
-                    <td class-"w-40">Phase</td>
+                    <td class="w-40">Phase</td>
                     <td>{{ product.phase }}</td>
                 </tr>
                 <tr>
@@ -46,7 +46,7 @@ layout: products/products_base.njk
                     <td>Tech Lead</td>
                     <td>{{ product.techLead }}</td>
                 </tr>
-            </tobdy>
+            </tbody>
         </table>
         <h4>Links</h4>
         <table class="text-sm bg-white w-96">
@@ -67,7 +67,7 @@ layout: products/products_base.njk
                     <td>APM</td>
                     <td>{% if links.observability.app %}<a href="{{ links.observability.app }}">Link</a>{% endif %}</td>
                 </tr>
-            </tobdy>
+            </tbody>
         </table>
         <h4>Technical Brief</h4>
         <table class="text-xs bg-white">
@@ -112,11 +112,11 @@ layout: products/products_base.njk
                     <td>Observability</td>
                     <td>{{ technical.observability }}</td>
                 </tr>
-            </tobdy>
+            </tbody>
         </table>
     </div>
 
-    <div>{{ content | safe }}<div>
+    <div>{{ content | safe }}</div>
 </div>
 
 <hr />
