@@ -36,7 +36,7 @@
     <div class="w-full flex mx-auto hero">
       <div id="hero" class="mt-24 container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         <div id="hero-label" class="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left">
-          <span class="text-4xl text-white">{{ slogan }}<span>
+          <span class="text-4xl text-white">{{ slogan }}</span>
           <div class="block my-2 ">
             <a href="{{ hero_button_link | url}}" class="text-base text-white border-2 border-white hover:bg-primary p-2 rounded-lg no-underline hover:text-white">{{ site[locale]._t.contact_us }}</a>
           </div>
@@ -44,7 +44,7 @@
         <div id="hero-visual" class="w-full md:w-2/5 py-6 text-center">
           <span class="text-lg text-white">
             <img class="w-2 md:w-2/5 z-50" src="{{ "/images/logo.png" | url }}">
-          <span>
+          </span>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@
       <div class="content w-full text-gray-700 bg-gray-100 shadow-md rounded-md p-2">
         <a href="{{ "/en/pages/articles" | url}}"><h2 class="leading-normal break-words" >{{ site[locale]._t.articles }}</h2></a>
         {% for post in posts %}
-          <article >
+          <article>
             <div>
               <a href="{{ post.url | url }}">{{ post.data.title }}</a>
             </div>
