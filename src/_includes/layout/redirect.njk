@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting according to language</title>
-</head>
-<body>
-  <!-- Redirecting to according to browser language -->
-  <script>
-var availableLanguages = [{% for lang in site.langs %}"{{ lang.id }}"{{ '' if loop.last else ',' }}{% endfor %}];
-
-// source from https://gist.github.com/leipert/9586b796281faa5e27ed
-var locale =
-  [
-    ...(window.navigator.languages || []),
-    window.navigator.language,
-    window.navigator.browserLanguage,
-    window.navigator.userLanguage,
-    window.navigator.systemLanguage
-  ]
-    .filter(Boolean)
-    .map(language => language.substr(0, 2))
-    .find(language => availableLanguages.includes(language)) || "{{ site.defaultLang }}";
-
-let redirUrl = "{{ '/' | url }}" + locale + "/";
-console.log("Redirecting to :" + redirUrl);
-window.location.replace(redirUrl);
-</script>
-
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting according to language</title>
+  </head>
+  <body>
+    <!-- Redirecting to according to browser language -->
+    <script>
+      const sStorage = window.sessionStorage;
+      const availableLanguages = [{% for lang in site.langs %}"{{ lang.id }}"{{ '' if loop.last else ',' }}{% endfor %}];
+      let storedLocale = sStorage.getItem('locale');
+      if (availableLanguages.includes(storedLocale)) {
+        let redirectUrl = `{{ '/' | url }}${storedLocale}/`;
+        window.location.replace(redirectUrl);
+      } else { // source from https://gist.github.com/leipert/9586b796281faa5e27ed
+        const locale = [
+          ...(window.navigator.languages || []),
+          window.navigator.language,
+          window.navigator.browserLanguage,
+          window.navigator.userLanguage,
+          window.navigator.systemLanguage
+        ]
+          .filter(Boolean)
+          .map(language => language.substring(0, 2))
+          .find(language => availableLanguages.includes(language)) || "{{ site.defaultLang }}";
+        let redirectUrl = `{{ '/' | url }}${locale}/`;
+        console.log("Redirecting to :" + redirectUrl);
+        sStorage.setItem('locale', locale);
+        window.location.replace(redirectUrl);
+      }
+    </script>
+  </body>
 </html>
